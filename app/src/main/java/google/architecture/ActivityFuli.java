@@ -46,6 +46,7 @@ public class ActivityFuli extends AppCompatActivity {
      * @param model
      */
     private void subscribeToModel(final FuliViewModel model){
+        //观察数据变化来刷新UI
         model.getLiveObservableData().observe(this, new Observer<FuliData>() {
             @Override
             public void onChanged(@Nullable FuliData fuliData) {
