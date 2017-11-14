@@ -8,12 +8,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/CommonBusiness" />
-            <option value="$PROJECT_DIR$/CoreModel" />
-            <option value="$PROJECT_DIR$/OpenSourceLibrary" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/appand" />
-            <option value="$PROJECT_DIR$/appfuli" />
+            <option value="$PROJECT_DIR$/lib_common" />
+            <option value="$PROJECT_DIR$/lib_coremodel" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

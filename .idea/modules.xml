@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CommonBusiness/CommonBusiness.iml" filepath="$PROJECT_DIR$/CommonBusiness/CommonBusiness.iml" />
-      <module fileurl="file://$PROJECT_DIR$/CoreModel/CoreModel.iml" filepath="$PROJECT_DIR$/CoreModel/CoreModel.iml" />
       <module fileurl="file://$PROJECT_DIR$/GoogleArchitectureDemo.iml" filepath="$PROJECT_DIR$/GoogleArchitectureDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/OpenSourceLibrary/OpenSourceLibrary.iml" filepath="$PROJECT_DIR$/OpenSourceLibrary/OpenSourceLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/appand/appand.iml" filepath="$PROJECT_DIR$/appand/appand.iml" />
-      <module fileurl="file://$PROJECT_DIR$/appfuli/appfuli.iml" filepath="$PROJECT_DIR$/appfuli/appfuli.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib_common/lib_common.iml" filepath="$PROJECT_DIR$/lib_common/lib_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib_coremodel/lib_coremodel.iml" filepath="$PROJECT_DIR$/lib_coremodel/lib_coremodel.iml" />
     </modules>
   </component>
 </project>
