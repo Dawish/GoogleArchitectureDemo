@@ -3,9 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GoogleArchitectureDemo.iml" filepath="$PROJECT_DIR$/GoogleArchitectureDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app_specific/app_specific.iml" filepath="$PROJECT_DIR$/app_specific/app_specific.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app_universal/app_universal.iml" filepath="$PROJECT_DIR$/app_universal/app_universal.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib_common/lib_common.iml" filepath="$PROJECT_DIR$/lib_common/lib_common.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib_coremodel/lib_coremodel.iml" filepath="$PROJECT_DIR$/lib_coremodel/lib_coremodel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_girls/module_girls.iml" filepath="$PROJECT_DIR$/module_girls/module_girls.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_news/module_news.iml" filepath="$PROJECT_DIR$/module_news/module_news.iml" />
     </modules>
   </component>
 </project>

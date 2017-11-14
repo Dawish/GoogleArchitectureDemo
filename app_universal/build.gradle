@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+
+android {
+//    compileSdkVersion 26
+    compileSdkVersion build_versions.target_sdk
+    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        applicationId "google.architecture.public"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+    lintOptions {
+        abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+//    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+//    implementation project(':OpenSourceLibrary')
+    implementation project(':lib_coremodel')
+    implementation project(':lib_common')
+
+    // Support libraries
+    implementation deps.support.app_compat
+//    implementation deps.support.v4
+    implementation deps.support.design
+    implementation deps.support.cardview
+    implementation deps.support.recyclerview
+
+    // Architecture components
+    implementation deps.lifecycle.runtime
+    implementation deps.lifecycle.extensions
+    annotationProcessor deps.lifecycle.compiler
+    implementation deps.room.runtime
+    annotationProcessor deps.room.compiler
+
+    //fresco
+    implementation 'com.facebook.fresco:fresco:1.5.0'
+    implementation "com.facebook.fresco:imagepipeline-okhttp3:1.5.0"
+
+    // butterknife
+    implementation deps.butterknife.runtime
+    annotationProcessor deps.butterknife.compiler
+
+}
