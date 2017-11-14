@@ -1,1 +1,1 @@
-include ':app', ':CoreModel', ':OpenSourceLibrary'
+include ':app', ':CoreModel', ':OpenSourceLibrary', ':CommonBusiness'

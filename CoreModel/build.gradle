@@ -53,6 +53,5 @@ dependencies {
     // RxJava
 //    implementation deps.rxjava2
     implementation deps.rx_android
-//    compile 'io.reactivex:rxandroid:1.2.0'
 
 }
