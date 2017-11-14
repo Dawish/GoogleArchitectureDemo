@@ -37,6 +37,7 @@ dependencies {
 
 //    implementation project(':OpenSourceLibrary')
     implementation project(':CoreModel')
+    implementation project(':CommonBusiness')
 
     // Support libraries
     implementation deps.support.app_compat

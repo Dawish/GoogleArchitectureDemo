@@ -7,6 +7,8 @@
       <module fileurl="file://$PROJECT_DIR$/GoogleArchitectureDemo.iml" filepath="$PROJECT_DIR$/GoogleArchitectureDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/OpenSourceLibrary/OpenSourceLibrary.iml" filepath="$PROJECT_DIR$/OpenSourceLibrary/OpenSourceLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/appand/appand.iml" filepath="$PROJECT_DIR$/appand/appand.iml" />
+      <module fileurl="file://$PROJECT_DIR$/appfuli/appfuli.iml" filepath="$PROJECT_DIR$/appfuli/appfuli.iml" />
     </modules>
   </component>
 </project>

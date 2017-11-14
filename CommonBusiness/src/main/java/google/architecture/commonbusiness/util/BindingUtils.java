@@ -1,4 +1,4 @@
-package google.architecture.util;
+package google.architecture.commonbusiness.util;
 
 import android.databinding.BindingAdapter;
 
