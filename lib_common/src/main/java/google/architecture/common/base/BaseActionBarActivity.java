@@ -11,15 +11,12 @@ import android.os.Bundle;
 import android.support.annotation.StringRes;
 import android.support.v7.app.ActionBar;
 
-import com.guiying.module.common.R;
+import google.architecture.common.R;
 
 /**
  * BaseActionBarActivity继承于BaseActivity，封装了actionBar的逻辑；
  * 继承于ActionBarBaseActivity的Activity都将默认带有ActionBar，并且只能使用AppTheme主题；
  * 只有那些ActionBar只带有Title和返回按钮的Activity方可继承
- *
- * @author 张华洋 2017/3/7 18:36
- * @version V1.2.0
  * @name BaseActionBarActivity
  */
 public abstract class BaseActionBarActivity extends BaseActivity {

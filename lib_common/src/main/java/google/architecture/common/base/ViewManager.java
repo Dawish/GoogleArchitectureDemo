@@ -9,10 +9,7 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * <p></p>
- *
- * @author 张华洋 2017/9/26 22:26
- * @version V1.1
+ * Activity和Fragment管理
  * @name ViewManager
  */
 public class ViewManager {

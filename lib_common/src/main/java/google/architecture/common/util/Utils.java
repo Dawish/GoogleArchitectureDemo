@@ -34,7 +34,7 @@ public class Utils {
     }
 
     /**
-     * 获取ApplicationContext
+     * 全局获取ApplicationContext
      *
      * @return ApplicationContext
      */

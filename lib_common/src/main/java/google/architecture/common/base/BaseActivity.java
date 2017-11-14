@@ -12,9 +12,6 @@ import google.architecture.common.util.Utils;
 
 /**
  * <p>Activity基类 </p>
- *
- * @author 2016/12/2 17:33
- * @version V1.0.0
  * @name BaseActivity
  */
 public abstract class BaseActivity extends AppCompatActivity {
