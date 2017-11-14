@@ -10,7 +10,7 @@
 
         <variable
             name="fuliViewModel"
-            type="google.architecture.viewmodel.FuliViewModel"/>
+            type="google.architecture.coremodel.viewmodel.FuliViewModel"/>
     </data>
 
     <LinearLayout

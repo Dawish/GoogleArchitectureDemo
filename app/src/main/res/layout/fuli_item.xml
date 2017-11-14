@@ -5,7 +5,7 @@
     xmlns:bind="http://schemas.android.com/tools">
     <data>
         <variable name="fuliItem"
-                  type="google.architecture.model.http.entities.FuliData.ResultsBean"/>
+                  type="google.architecture.coremodel.datamodel.http.entities.FuliData.ResultsBean"/>
         <variable name="callback"
                   type="google.architecture.ui.FuliItemClickCallback"/>
     </data>

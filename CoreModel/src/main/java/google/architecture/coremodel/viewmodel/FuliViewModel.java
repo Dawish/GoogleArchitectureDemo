@@ -1,4 +1,4 @@
-package google.architecture.viewmodel;
+package google.architecture.coremodel.viewmodel;
 
 import android.app.Application;
 import android.arch.core.util.Function;
@@ -10,21 +10,13 @@ import android.databinding.ObservableField;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import org.reactivestreams.Subscriber;
-import org.reactivestreams.Subscription;
-
-import google.architecture.ActivityFuli;
-import google.architecture.databinding.ActivityFuliBinding;
-import google.architecture.model.http.entities.FuliData;
-import google.architecture.model.http.repository.GankDataRepository;
-import google.architecture.util.NetUtils;
-import io.reactivex.Flowable;
-import io.reactivex.Observable;
+import google.architecture.coremodel.datamodel.http.entities.FuliData;
+import google.architecture.coremodel.datamodel.http.repository.GankDataRepository;
+import google.architecture.coremodel.util.NetUtils;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 /**

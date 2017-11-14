@@ -8,11 +8,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import google.architecture.coremodel.datamodel.http.entities.FuliData;
+import google.architecture.coremodel.viewmodel.FuliViewModel;
 import google.architecture.databinding.ActivityFuliBinding;
-import google.architecture.model.http.entities.FuliData;
 import google.architecture.ui.FuliAdapter;
 import google.architecture.ui.FuliItemClickCallback;
-import google.architecture.viewmodel.FuliViewModel;
 
 public class ActivityFuli extends AppCompatActivity {
     ActivityFuliBinding binding;
@@ -34,7 +34,7 @@ public class ActivityFuli extends AppCompatActivity {
 
     }
 
-    private final FuliItemClickCallback mFuliItemClickCallback = new FuliItemClickCallback() {
+    private final FuliItemClickCallback  mFuliItemClickCallback = new FuliItemClickCallback() {
         @Override
         public void onClick(FuliData.ResultsBean comment) {
             Toast.makeText(ActivityFuli.this, comment.getDesc(), Toast.LENGTH_SHORT).show();

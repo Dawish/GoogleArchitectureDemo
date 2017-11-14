@@ -1,16 +1,9 @@
-package google.architecture.model.http.repository;
+package google.architecture.coremodel.datamodel.http.repository;
 
-import google.architecture.model.http.entities.AndroidData;
-import google.architecture.model.http.entities.FuliData;
-import io.reactivex.Flowable;
+import google.architecture.coremodel.datamodel.http.ApiClient;
+import google.architecture.coremodel.datamodel.http.entities.AndroidData;
+import google.architecture.coremodel.datamodel.http.entities.FuliData;
 import io.reactivex.Observable;
-import google.architecture.model.http.ApiClient;
-import google.architecture.model.http.entities.FuliData;
-import io.reactivex.Observer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
-import io.reactivex.subjects.Subject;
 
 /**
  * Created by dxx on 2017/11/8.

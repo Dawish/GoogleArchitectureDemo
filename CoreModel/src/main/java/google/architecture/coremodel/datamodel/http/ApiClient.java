@@ -1,8 +1,8 @@
-package google.architecture.model.http;
+package google.architecture.coremodel.datamodel.http;
 
-import android.support.compat.BuildConfig;
 
-import google.architecture.model.http.service.GankDataService;
+import google.architecture.coremodel.BuildConfig;
+import google.architecture.coremodel.datamodel.http.service.GankDataService;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;

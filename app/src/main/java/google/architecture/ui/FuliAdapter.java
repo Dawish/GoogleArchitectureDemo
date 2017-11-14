@@ -5,15 +5,12 @@ import android.support.annotation.Nullable;
 import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.List;
-import java.util.Objects;
-
 import google.architecture.R;
+import google.architecture.coremodel.datamodel.http.entities.FuliData;
 import google.architecture.databinding.FuliItemBinding;
-import google.architecture.model.http.entities.FuliData;
 
 /**
  * Created by dxx on 2017/11/10.

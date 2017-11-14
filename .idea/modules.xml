@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CoreModel/CoreModel.iml" filepath="$PROJECT_DIR$/CoreModel/CoreModel.iml" />
       <module fileurl="file://$PROJECT_DIR$/GoogleArchitectureDemo.iml" filepath="$PROJECT_DIR$/GoogleArchitectureDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OpenSourceLibrary/OpenSourceLibrary.iml" filepath="$PROJECT_DIR$/OpenSourceLibrary/OpenSourceLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

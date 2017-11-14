@@ -1,16 +1,10 @@
-package google.architecture.util;
+package google.architecture.coremodel.util;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-
-import java.lang.ref.WeakReference;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 public class NetUtils {
 

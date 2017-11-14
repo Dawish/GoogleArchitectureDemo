@@ -1,4 +1,4 @@
-package google.architecture.model.http.entities;
+package google.architecture.coremodel.datamodel.http.entities;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import java.util.List;
  * Created by dxx on 2017/11/8.
  */
 
-public class AndroidData {
+public class FuliData {
 
     private boolean error;
     private List<ResultsBean> results;
@@ -38,7 +38,6 @@ public class AndroidData {
         private String url;
         private boolean used;
         private String who;
-        private List<String> images;
 
         public String get_id() {
             return _id;
@@ -110,14 +109,6 @@ public class AndroidData {
 
         public void setWho(String who) {
             this.who = who;
-        }
-
-        public List<String> getImages() {
-            return images;
-        }
-
-        public void setImages(List<String> images) {
-            this.images = images;
         }
     }
 }

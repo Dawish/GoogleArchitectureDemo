@@ -1,7 +1,7 @@
-package google.architecture.model.http.service;
+package google.architecture.coremodel.datamodel.http.service;
 
-import google.architecture.model.http.entities.AndroidData;
-import google.architecture.model.http.entities.FuliData;
+import google.architecture.coremodel.datamodel.http.entities.AndroidData;
+import google.architecture.coremodel.datamodel.http.entities.FuliData;
 import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import retrofit2.http.GET;
