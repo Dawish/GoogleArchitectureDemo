@@ -2,15 +2,15 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ActivityFuli">
+    tools:context=".ActivityGirls">
 
     <data>
 
         <import type="android.view.View"/>
 
         <variable
-            name="fuliViewModel"
-            type="google.architecture.coremodel.viewmodel.FuliViewModel"/>
+            name="girlsViewModel"
+            type="google.architecture.coremodel.viewmodel.GirlsViewModel"/>
     </data>
 
     <LinearLayout
@@ -19,10 +19,6 @@
         android:background="@color/cardview_light_background"
         android:orientation="vertical">
 
-        <!--<include-->
-            <!--layout="@layout/fuli_item"-->
-            <!--app:uiObservableData="@{fuliViewModel.uiObservableData}"/>-->
-
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -30,11 +26,11 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/fuli_list_wrapper">
+                android:id="@+id/girls_list_wrapper">
 
                 <android.support.v7.widget.RecyclerView
-                    android:id="@+id/fuli_list"
-                    android:contentDescription="fuli list"
+                    android:id="@+id/girls_list"
+                    android:contentDescription="girls list"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:layoutManager="LinearLayoutManager" />

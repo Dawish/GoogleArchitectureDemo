@@ -2,20 +2,21 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:bind="http://schemas.android.com/tools">
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
     <data>
-        <variable name="fuliItem"
-                  type="google.architecture.coremodel.datamodel.http.entities.FuliData.ResultsBean"/>
+        <import type="android.view.View"/>
+        <variable name="girlsItem"
+                  type="google.architecture.coremodel.datamodel.http.entities.GirlsData.ResultsBean"/>
         <variable name="callback"
-                  type="google.architecture.universal.ui.FuliItemClickCallback"/>
+                  type="google.architecture.girls.GirlItemClickCallback"/>
     </data>
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/comment_light_background"
-        android:layout_margin="@dimen/comment_horizontal_margin"
-        android:minHeight="@dimen/comment_minHeight"
-        android:onClick="@{() ->  callback.onClick(fuliItem)}"
+        app:cardBackgroundColor="@color/cardview_shadow_end_color"
+        android:layout_margin="16dp"
+        android:minHeight="64dp"
+        android:onClick="@{() ->  callback.onClick(girlsItem)}"
         android:orientation="horizontal"
         android:padding="8dp"
         app:cardUseCompatPadding="true">
@@ -27,7 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 fresco:actualImageScaleType="centerCrop"
-                bind:image="@{fuliItem.url}"
+                bind:image="@{girlsItem.url}"
                 android:adjustViewBounds="true"/>
 
             <TextView
@@ -39,7 +40,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:background="#66000000"
-                android:text="@{fuliItem.who}"/>
+                android:text="@{girlsItem.who}"/>
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 </layout>

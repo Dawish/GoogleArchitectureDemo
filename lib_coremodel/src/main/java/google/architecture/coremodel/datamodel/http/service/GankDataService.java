@@ -1,8 +1,7 @@
 package google.architecture.coremodel.datamodel.http.service;
 
 import google.architecture.coremodel.datamodel.http.entities.AndroidData;
-import google.architecture.coremodel.datamodel.http.entities.FuliData;
-import io.reactivex.Flowable;
+import google.architecture.coremodel.datamodel.http.entities.GirlsData;
 import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -14,7 +13,7 @@ import retrofit2.http.Path;
 public interface GankDataService {
 
     @GET("api/data/福利/{size}/{index}")
-    Observable<FuliData> getFuliData(@Path("size") String size, @Path("index") String index);
+    Observable<GirlsData> getFuliData(@Path("size") String size, @Path("index") String index);
 
     @GET("api/data/Android/{size}/{index}")
     Observable<AndroidData> getAndroidData(@Path("size") String size, @Path("index") String index);
