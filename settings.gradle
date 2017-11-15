@@ -1,1 +1,1 @@
-include ':app_universal', ':lib_common', ':lib_coremodel', ':module_girls', ':module_news', ':app_specific'
+include ':app_universal', ':lib_common', ':lib_coremodel', ':module_girls', ':module_news', ':app_specific', ':lib_opensource'

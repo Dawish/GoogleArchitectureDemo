@@ -1,0 +1,65 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion build_versions.target_sdk
+    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    // Support libraries
+    api deps.support.app_compat
+//    implementation deps.support.v4
+    api deps.support.design
+    api deps.support.cardview
+    api deps.support.recyclerview
+
+    // Architecture components
+    api deps.lifecycle.runtime
+    api deps.lifecycle.extensions
+    annotationProcessor deps.lifecycle.compiler
+    api deps.room.runtime
+    annotationProcessor deps.room.compiler
+
+    //fresco
+    api 'com.facebook.fresco:fresco:1.5.0'
+    api "com.facebook.fresco:imagepipeline-okhttp3:1.5.0"
+
+    // butterknife
+    api deps.butterknife.runtime
+    annotationProcessor deps.butterknife.compiler
+
+    //http
+    api deps.retrofit.runtime
+    api deps.retrofit.gson
+    api deps.retrofit.adapter_rxjava2
+    api deps.okhttp.okhttp3
+    api deps.okhttp.okhttp3_logging_interceptor
+
+    // RxJava
+//    implementation deps.rxjava2
+    api deps.rx_android
+}

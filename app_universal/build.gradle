@@ -35,8 +35,14 @@ dependencies {
 //    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 
 //    implementation project(':OpenSourceLibrary')
-    implementation project(':lib_coremodel')
-    implementation project(':lib_common')
+
+    if (isModule.toBoolean()) {
+        implementation project(':lib_coremodel')
+        implementation project(':lib_common')
+    } else {
+        implementation project(':module_girls')
+        implementation project(':module_news')
+    }
 
     // Support libraries
     implementation deps.support.app_compat

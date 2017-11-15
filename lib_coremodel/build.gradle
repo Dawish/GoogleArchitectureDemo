@@ -34,28 +34,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    //测试库
-//    implementation project(':OpenSourceLibrary')
-    // Architecture components
-    implementation deps.lifecycle.runtime
-    implementation deps.lifecycle.extensions
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    annotationProcessor deps.lifecycle.compiler
-    implementation deps.room.runtime
-    annotationProcessor deps.room.compiler
 
-    //http
-    implementation deps.retrofit.runtime
-    implementation deps.retrofit.gson
-    implementation deps.retrofit.adapter_rxjava2
-    implementation deps.okhttp.okhttp3
-    implementation deps.okhttp.okhttp3_logging_interceptor
-
-    // RxJava
-//    implementation deps.rxjava2
-    implementation deps.rx_android
+    api project(':lib_opensource')
 
 }

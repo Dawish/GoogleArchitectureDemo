@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/app_universal" />
             <option value="$PROJECT_DIR$/lib_common" />
             <option value="$PROJECT_DIR$/lib_coremodel" />
+            <option value="$PROJECT_DIR$/lib_opensource" />
             <option value="$PROJECT_DIR$/module_girls" />
             <option value="$PROJECT_DIR$/module_news" />
           </set>

@@ -27,9 +27,17 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    if (isModule.toBoolean()) {
+        implementation project(':lib_common')
+        implementation project(':lib_coremodel')
+    } else {
+        implementation project(':module_girls')
+        implementation project(':module_news')
+    }
+
 }
