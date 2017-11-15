@@ -32,9 +32,6 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-//    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-
-//    implementation project(':OpenSourceLibrary')
 
     if (isModule.toBoolean()) {
         implementation project(':lib_coremodel')
@@ -43,27 +40,5 @@ dependencies {
         implementation project(':module_girls')
         implementation project(':module_news')
     }
-
-    // Support libraries
-    implementation deps.support.app_compat
-//    implementation deps.support.v4
-    implementation deps.support.design
-    implementation deps.support.cardview
-    implementation deps.support.recyclerview
-
-    // Architecture components
-    implementation deps.lifecycle.runtime
-    implementation deps.lifecycle.extensions
-    annotationProcessor deps.lifecycle.compiler
-    implementation deps.room.runtime
-    annotationProcessor deps.room.compiler
-
-    //fresco
-    implementation 'com.facebook.fresco:fresco:1.5.0'
-    implementation "com.facebook.fresco:imagepipeline-okhttp3:1.5.0"
-
-    // butterknife
-    implementation deps.butterknife.runtime
-    annotationProcessor deps.butterknife.compiler
 
 }
