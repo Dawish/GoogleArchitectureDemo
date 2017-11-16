@@ -62,4 +62,7 @@ dependencies {
     // RxJava
 //    implementation deps.rxjava2
     api deps.rx_android
+
+    //router
+    api deps.arouter.runtime
 }

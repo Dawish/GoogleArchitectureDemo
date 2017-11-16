@@ -40,5 +40,6 @@ dependencies {
         implementation project(':module_girls')
         implementation project(':module_news')
     }
-
+    //router 编译放在主项目 依赖可以放在公共库
+    annotationProcessor deps.arouter.compiler
 }
