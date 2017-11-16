@@ -5,10 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import google.architecture.common.base.BaseActivity;
 import google.architecture.coremodel.viewmodel.GirlsViewModel;
 import google.architecture.universal.databinding.ActivityMainBinding;
 
-public class ActivityMain extends AppCompatActivity {
+public class ActivityMain extends BaseActivity {
     ActivityMainBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

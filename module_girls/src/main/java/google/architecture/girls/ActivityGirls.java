@@ -8,11 +8,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+import google.architecture.common.base.BaseActivity;
 import google.architecture.coremodel.datamodel.http.entities.GirlsData;
 import google.architecture.coremodel.viewmodel.GirlsViewModel;
 import google.architecture.girls.databinding.ActivityGirlsBinding;
 
-public class ActivityGirls extends AppCompatActivity {
+public class ActivityGirls extends BaseActivity {
 
     GirlsAdapter            girlsAdapter;
     ActivityGirlsBinding    activityGirlsBinding;
