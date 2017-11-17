@@ -32,6 +32,11 @@ public class ActivityMain extends BaseActivity {
                     //跳转到GirlsActivity
                     ARouter.getInstance().build("/girls/list").navigation();
                     break;
+                case R.id.toNews:
+                    Log.i("danxx", "onClick toNews");
+                    //跳转到GirlsActivity
+                    ARouter.getInstance().build("/news/list").navigation();
+                    break;
             }
         }
     };

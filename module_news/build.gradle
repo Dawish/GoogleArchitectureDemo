@@ -12,6 +12,12 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
+        //ARouter
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -37,5 +43,5 @@ dependencies {
 
     api project(':lib_coremodel')
     api project(':lib_common')
-
+    annotationProcessor deps.arouter.compiler
 }

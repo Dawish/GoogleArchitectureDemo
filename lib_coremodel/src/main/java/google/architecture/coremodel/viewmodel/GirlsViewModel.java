@@ -41,7 +41,7 @@ public class GirlsViewModel extends AndroidViewModel {
 
     public GirlsViewModel(@NonNull Application application) {
         super(application);
-        Log.i("danxx", "FuliViewModel------>");
+        Log.i("danxx", "GirlsViewModel------>");
         //这里的trigger为网络检测，也可以换成缓存数据是否存在检测
         mLiveObservableData = Transformations.switchMap(NetUtils.netConnected(application), new Function<Boolean, LiveData<GirlsData>>() {
             @Override
@@ -94,10 +94,6 @@ public class GirlsViewModel extends AndroidViewModel {
      */
     public void setUiObservableData(GirlsData product) {
         this.uiObservableData.set(product);
-    }
-    public ObservableField<GirlsData> getUiObservableData() {
-
-        return uiObservableData;
     }
 
     @Override

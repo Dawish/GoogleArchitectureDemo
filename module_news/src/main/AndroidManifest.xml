@@ -1,2 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="google.architecture.news" />
+    package="google.architecture.news">
+    <application>
+        <activity android:name=".ActivityNews"></activity>
+    </application>
+</manifest>

@@ -16,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/cardview_light_background"
+        android:gravity="center"
         android:orientation="vertical">
 
         <Button
@@ -26,7 +27,14 @@
             android:onClick="@{() ->  itemClick.onClick(@id/toGirls)}"
             android:text="to Girls"/>
 
-
+        <Button
+            android:id="@+id/toNews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_10dp"
+            android:textAllCaps="false"
+            android:onClick="@{() ->  itemClick.onClick(@id/toNews)}"
+            android:text="to News"/>
 
     </LinearLayout>
 
