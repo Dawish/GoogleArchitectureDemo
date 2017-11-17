@@ -5,13 +5,14 @@ import android.app.Application;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
+import google.architecture.common.base.BaseApplication;
 import google.architecture.common.util.Utils;
 
 /**
  * Created by dxx on 2017/11/13.
  */
 
-public class App  extends Application{
+public class App  extends BaseApplication{
 
     @Override
     public void onCreate() {

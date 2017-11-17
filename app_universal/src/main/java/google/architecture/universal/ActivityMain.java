@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+
 import google.architecture.common.base.BaseActivity;
 import google.architecture.coremodel.viewmodel.GirlsViewModel;
 import google.architecture.universal.databinding.ActivityMainBinding;
@@ -14,6 +16,7 @@ public class ActivityMain extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("UniversalApp_ActivityMain");
         Log.i("danxx", "onCreate onCreate");
         binding = DataBindingUtil.setContentView(ActivityMain.this, R.layout.activity_main);
         binding.setItemClick(itemClick);
@@ -26,6 +29,8 @@ public class ActivityMain extends BaseActivity {
             switch (id){
                 case R.id.toGirls:
                     Log.i("danxx", "onClick toGirls");
+                    //跳转到GirlsActivity
+                    ARouter.getInstance().build("/girls/list").navigation();
                     break;
             }
         }

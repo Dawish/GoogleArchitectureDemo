@@ -8,11 +8,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+
 import google.architecture.common.base.BaseActivity;
 import google.architecture.coremodel.datamodel.http.entities.GirlsData;
 import google.architecture.coremodel.viewmodel.GirlsViewModel;
 import google.architecture.girls.databinding.ActivityGirlsBinding;
 
+@Route(path = "/girls/list")
 public class ActivityGirls extends BaseActivity {
 
     GirlsAdapter            girlsAdapter;
@@ -21,6 +24,7 @@ public class ActivityGirls extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Module_ActivityGirls");
         activityGirlsBinding = DataBindingUtil.setContentView(ActivityGirls.this,R.layout.activity_girls);
         GirlsViewModel girlsViewModel = new GirlsViewModel(ActivityGirls.this.getApplication());
         girlsAdapter = new GirlsAdapter(girlItemClickCallback);
@@ -52,4 +56,8 @@ public class ActivityGirls extends BaseActivity {
         });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 }
