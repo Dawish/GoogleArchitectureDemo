@@ -1,5 +1,6 @@
 package google.architecture.universal;
 
+import android.app.Activity;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,17 +31,27 @@ public class ActivityMain extends BaseActivity {
                 case R.id.toGirls:
                     Log.i("danxx", "onClick toGirls");
                     //跳转到GirlsActivity
-                    ARouter.getInstance().build("/girls/list").navigation();
+                    ARouter.getInstance()
+                            .build("/girls/list")
+                            .withTransition(R.anim.activity_up_in, R.anim.activity_up_out)
+                            .navigation(ActivityMain.this);
                     break;
                 case R.id.toNews:
                     Log.i("danxx", "onClick toNews");
                     //跳转到GirlsActivity
-                    ARouter.getInstance().build("/news/list").navigation();
+                    ARouter.getInstance()
+                            .build("/news/list")
+                            .withTransition(R.anim.activity_up_in, R.anim.activity_up_out)
+                            .navigation(ActivityMain.this);
                     break;
                 case R.id.toDynamic:
                     Log.i("danxx", "onClick toNews");
                     //跳转到ActivityDynamicGirls (模拟动态url)
-                    ARouter.getInstance().build("/dynamic/girls/list").withString("fullUrl", "http://gank.io/api/data/%E7%A6%8F%E5%88%A9/20/1").navigation();
+                    ARouter.getInstance()
+                            .build("/dynamic/girls/list")
+                            .withString("fullUrl", "http://gank.io/api/data/%E7%A6%8F%E5%88%A9/20/1")
+                            .withTransition(R.anim.activity_up_in, R.anim.activity_up_out)
+                            .navigation(ActivityMain.this);
                     break;
             }
         }
