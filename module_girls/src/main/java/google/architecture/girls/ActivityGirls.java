@@ -25,6 +25,7 @@ public class ActivityGirls extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Module_ActivityGirls");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         activityGirlsBinding = DataBindingUtil.setContentView(ActivityGirls.this,R.layout.activity_girls);
         GirlsViewModel girlsViewModel = new GirlsViewModel(ActivityGirls.this.getApplication());
         girlsAdapter = new GirlsAdapter(girlItemClickCallback);

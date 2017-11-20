@@ -24,6 +24,7 @@ public class ActivityNews extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Module_ActivityNews");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         activityNewsBinding = DataBindingUtil.setContentView(ActivityNews.this,R.layout.activity_news);
         NewsViewModel newsViewModel = new NewsViewModel(ActivityNews.this.getApplication());
         newsAdapter = new NewsAdapter(girlItemClickCallback);
