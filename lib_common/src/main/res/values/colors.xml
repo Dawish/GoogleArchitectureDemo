@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--APP的主题色-->
-    <color name="colorPrimary">#F44336</color>
-    <color name="colorPrimaryDark">#D32F2F</color>
-    <color name="colorAccent">#FF5252</color>
+    <color name="colorPrimary">#139948</color>
+    <color name="colorPrimaryDark">#139948</color>
+    <color name="colorAccent">#139948</color>
 
     <!--APP公用的一些颜色-->
     <color name="common_bg">#fff7f7f7</color>
@@ -11,7 +11,7 @@
     <color name="common_hint_text">@color/gray_AD</color>
     <color name="divider_color">@color/gray_cc</color>
     <color name="black_overlay">@color/black_alpha40</color>
-    <color name="common_title_bg">#CA2C32</color>
+    <color name="common_title_bg">#789948</color>
     <color name="transparent">@android:color/transparent</color>
     <color name="transparent_color">#00ffffff</color>
     <color name="text_black_4d">#4d4d4d</color>

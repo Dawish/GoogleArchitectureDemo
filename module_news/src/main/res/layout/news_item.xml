@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable name="newsItem"
+                  type="google.architecture.coremodel.datamodel.http.entities.NewsData.ResultsBean"/>
+        <variable name="callback"
+                  type="google.architecture.news.NewsItemClickCallback"/>
+    </data>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_6dp"
+        android:layout_marginLeft="@dimen/size_16dp"
+        android:layout_marginRight="@dimen/size_16dp"
+        android:onClick="@{() ->  callback.onClick(newsItem)}"
+        android:orientation="horizontal"
+        android:minHeight="@dimen/size_90dp"
+        app:cardCornerRadius="@dimen/size_5dp"
+        app:cardBackgroundColor="@color/common_title_bg"
+        android:paddingTop="@dimen/size_4dp"
+        android:paddingLeft="@dimen/size_4dp"
+        android:paddingRight="@dimen/size_4dp"
+        android:paddingBottom="@dimen/size_16dp"
+        app:cardUseCompatPadding="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center_vertical|left"
+                android:gravity="left|center_vertical"
+                android:padding="8dp"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:maxLines="2"
+                android:text="@{newsItem.desc}"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="right|center_vertical"
+                android:layout_gravity="bottom|right"
+                android:textColor="#ddccaa"
+                android:textSize="12sp"
+                android:singleLine="true"
+                android:padding="@dimen/size_4dp"
+                android:text="@{newsItem.who}"/>
+    </android.support.v7.widget.CardView>
+</layout>
