@@ -4,11 +4,13 @@ import android.arch.lifecycle.Observer;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 
 import google.architecture.common.base.BaseActivity;
 import google.architecture.coremodel.datamodel.http.ApiConstants;
@@ -34,10 +36,15 @@ public class ActivityDynamicGirls extends BaseActivity {
         setTitle("Module_ActivityDynamicGirls");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         activityGirlsBinding = DataBindingUtil.setContentView(ActivityDynamicGirls.this,R.layout.activity_girls);
+        //inject
+        ARouter.getInstance().inject(this);
 
         Log.i("danxx", "fullUrl-->"+fullUrl);
-
-        DynamicGirlsViewModel dynamicGirlsViewModel = new DynamicGirlsViewModel(ActivityDynamicGirls.this.getApplication(), "/api/data/%E7%A6%8F%E5%88%A9/20/1");
+        if(TextUtils.isEmpty(fullUrl)){
+            return;
+        }
+        fullUrl = fullUrl.replaceAll(ApiConstants.GankHost, "");
+        DynamicGirlsViewModel dynamicGirlsViewModel = new DynamicGirlsViewModel(ActivityDynamicGirls.this.getApplication(), fullUrl);
 
         girlsAdapter = new GirlsAdapter(girlItemClickCallback);
         activityGirlsBinding.girlsList.setAdapter(girlsAdapter);
