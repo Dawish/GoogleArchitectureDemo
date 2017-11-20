@@ -3,7 +3,11 @@
     package="google.architecture.girls">
 
     <application>
+
         <activity android:name=".ActivityGirls"></activity>
+
+        <activity android:name=".ActivityDynamicGirls"></activity>
+
     </application>
 
 </manifest>

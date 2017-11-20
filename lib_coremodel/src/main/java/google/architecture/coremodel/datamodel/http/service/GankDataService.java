@@ -20,8 +20,4 @@ public interface GankDataService {
     @GET("api/data/Android/{size}/{index}")
     Observable<NewsData> getAndroidData(@Path("size") String size, @Path("index") String index);
 
-    @GET
-    Observable<Model> getFuliData(@Url String url);
-
-
 }

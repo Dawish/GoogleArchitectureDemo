@@ -2,6 +2,7 @@ package google.architecture.coremodel.datamodel.http;
 
 
 import google.architecture.coremodel.BuildConfig;
+import google.architecture.coremodel.datamodel.http.service.DynamicApiService;
 import google.architecture.coremodel.datamodel.http.service.GankDataService;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -15,6 +16,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient{
 
+    /**
+     * 获取指定数据类型
+     * @return
+     */
     public static GankDataService getGankDataService(){
 
         GankDataService gankDataService = initService(ApiConstants.fuliHost, GankDataService.class);
@@ -23,13 +28,24 @@ public class ApiClient{
     }
 
     /**
+     * 动态url获取数据
+     * @param url
+     * @return
+     */
+    public static DynamicApiService getDynamicDataService(String url){
+
+        DynamicApiService dynamicApiService = ApiClient.initService(url, DynamicApiService.class);
+
+        return dynamicApiService;
+    }
+    /**
      * 获得想要的 retrofit service
      * @param baseUrl  数据请求url
      * @param clazz    想要的 retrofit service 接口，Retrofit会代理生成对应的实体类
      * @param <T>
      * @return
      */
-    private static <T> T initService(String baseUrl, Class<T> clazz) {
+    public static <T> T initService(String baseUrl, Class<T> clazz) {
 
         OkHttpClient.Builder builder = new OkHttpClient().newBuilder();
         if (BuildConfig.DEBUG) {

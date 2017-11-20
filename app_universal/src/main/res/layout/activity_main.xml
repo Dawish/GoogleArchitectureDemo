@@ -23,8 +23,10 @@
             android:id="@+id/toGirls"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="@dimen/size_10dp"
             android:textAllCaps="false"
             android:onClick="@{() ->  itemClick.onClick(@id/toGirls)}"
+            android:textSize="@dimen/text_size_20sp"
             android:text="to Girls"/>
 
         <Button
@@ -32,9 +34,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/size_10dp"
+            android:padding="@dimen/size_10dp"
             android:textAllCaps="false"
             android:onClick="@{() ->  itemClick.onClick(@id/toNews)}"
+            android:textSize="@dimen/text_size_20sp"
             android:text="to News"/>
+
+        <Button
+            android:id="@+id/toDynamic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_10dp"
+            android:padding="@dimen/size_10dp"
+            android:textAllCaps="false"
+            android:onClick="@{() ->  itemClick.onClick(@id/toDynamic)}"
+            android:textSize="@dimen/text_size_20sp"
+            android:text="to Dynamic Girls"/>
 
     </LinearLayout>
 

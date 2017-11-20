@@ -37,6 +37,11 @@ public class ActivityMain extends BaseActivity {
                     //跳转到GirlsActivity
                     ARouter.getInstance().build("/news/list").navigation();
                     break;
+                case R.id.toDynamic:
+                    Log.i("danxx", "onClick toNews");
+                    //跳转到ActivityDynamicGirls (模拟动态url)
+                    ARouter.getInstance().build("/dynamic/girls/list").withString("fullUrl", "http://gank.io/api/data/%E7%A6%8F%E5%88%A9/20/1").navigation();
+                    break;
             }
         }
     };
