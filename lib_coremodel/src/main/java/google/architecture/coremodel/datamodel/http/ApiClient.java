@@ -22,7 +22,7 @@ public class ApiClient{
      */
     public static GankDataService getGankDataService(){
 
-        GankDataService gankDataService = initService(ApiConstants.fuliHost, GankDataService.class);
+        GankDataService gankDataService = initService(ApiConstants.GankHost, GankDataService.class);
 
         return gankDataService;
     }
@@ -47,24 +47,35 @@ public class ApiClient{
      */
     public static <T> T initService(String baseUrl, Class<T> clazz) {
 
-        OkHttpClient.Builder builder = new OkHttpClient().newBuilder();
-        if (BuildConfig.DEBUG) {
-            HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
-            httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-            builder.addInterceptor(httpLoggingInterceptor);
-//            builder.addNetworkInterceptor(new StethoInterceptor());
-//            BuildConfig.STETHO.addNetworkInterceptor(builder);
-        }
-        OkHttpClient client = builder.build();
-
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .client(client)
+                .client(getOkHttpClientInstance())
                 .build();
 
         return retrofit.create(clazz);
+    }
+
+    /**单例OkHttpClient*/
+    private static OkHttpClient OkHttpClientInstance;
+    public static OkHttpClient getOkHttpClientInstance(){
+        if (OkHttpClientInstance == null) {
+            synchronized (ApiClient.class) {
+                if (OkHttpClientInstance == null) {
+                    OkHttpClient.Builder builder = new OkHttpClient().newBuilder();
+                    if (BuildConfig.DEBUG) {
+                        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
+                        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+                        builder.addInterceptor(httpLoggingInterceptor);
+//                      builder.addNetworkInterceptor(new StethoInterceptor());
+//                      BuildConfig.STETHO.addNetworkInterceptor(builder);
+                    }
+                    OkHttpClientInstance = builder.build();
+                }
+            }
+        }
+        return OkHttpClientInstance;
     }
 
 }

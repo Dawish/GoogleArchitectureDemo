@@ -6,6 +6,6 @@ package google.architecture.coremodel.datamodel.http;
 
 public class ApiConstants {
 
-    public static final String fuliHost = "http://gank.io/";
+    public static final String GankHost = "http://gank.io/";
 
 }

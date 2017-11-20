@@ -12,9 +12,7 @@ import java.lang.reflect.ParameterizedType;
 
 import google.architecture.coremodel.datamodel.http.ApiClient;
 import google.architecture.coremodel.datamodel.http.ApiConstants;
-import google.architecture.coremodel.datamodel.http.entities.GirlsData;
 import google.architecture.coremodel.datamodel.http.service.DynamicApiService;
-import google.architecture.coremodel.datamodel.http.service.GankDataService;
 import google.architecture.coremodel.util.JsonUtil;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -45,7 +43,7 @@ public class BaseViewModel<T> extends AndroidViewModel {
 
     public BaseViewModel(@NonNull Application application, String fullUrl) {
         super(application);
-        ApiClient.initService(ApiConstants.fuliHost, DynamicApiService.class).getDynamicData(fullUrl).subscribeOn(Schedulers.io())
+        ApiClient.initService(ApiConstants.GankHost, DynamicApiService.class).getDynamicData(fullUrl).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<ResponseBody>() {
             @Override
             public void onSubscribe(Disposable d) {
