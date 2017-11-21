@@ -148,5 +148,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
-
+    @Override
+    public void finish() {
+        super.finish();
+        this.overridePendingTransition(R.anim.activity_down_in, R.anim.activity_down_out);
+    }
 }

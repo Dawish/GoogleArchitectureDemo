@@ -3,8 +3,6 @@ package google.architecture.coremodel.datamodel.http.repository;
 import android.arch.lifecycle.MutableLiveData;
 
 import google.architecture.coremodel.datamodel.http.ApiClient;
-import google.architecture.coremodel.datamodel.http.entities.GirlsData;
-import google.architecture.coremodel.datamodel.http.service.DynamicApiService;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;

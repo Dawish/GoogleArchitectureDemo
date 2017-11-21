@@ -48,4 +48,8 @@
         <item name="android:backgroundDimEnabled">false</item><!--模糊-->
     </style>
 
+    <!-- Activity主题，防止专场动画黑屏 -->
+    <style name="activityTheme" parent="@android:style/Theme">
+    </style>
+
 </resources>
