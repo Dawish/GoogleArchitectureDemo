@@ -14,4 +14,7 @@
     <string name="more">更多</string>
     <string name="no_data">暂无数据</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">FragmentAbout</string>
+
 </resources>

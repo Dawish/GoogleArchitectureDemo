@@ -2,6 +2,8 @@ package google.architecture.common.util;
 
 import android.databinding.BindingAdapter;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 
@@ -21,5 +23,9 @@ public class BindingUtils {
     public static void setOnNavigationItemSelectedListener(
             BottomNavigationView view, BottomNavigationView.OnNavigationItemSelectedListener listener) {
         view.setOnNavigationItemSelectedListener(listener);
+    }
+    @BindingAdapter("bind:viewPagerAdapter")
+    public static void setViewPagerAdapter(ViewPager view, FragmentStatePagerAdapter adapter) {
+        view.setAdapter(adapter);
     }
 }

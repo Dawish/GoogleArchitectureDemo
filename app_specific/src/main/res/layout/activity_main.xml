@@ -11,6 +11,10 @@
             name="onNavigationItemSelectedListener"
             type="android.support.design.widget.BottomNavigationView.OnNavigationItemSelectedListener"></variable>
 
+        <variable
+            name="viewPaAdapter"
+            type="android.support.v4.app.FragmentStatePagerAdapter"></variable>
+
     </data>
 
     <LinearLayout
@@ -22,7 +26,8 @@
             android:id="@+id/container_pager"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            bind:viewPagerAdapter="@{viewPaAdapter}"/>
 
         <android.support.design.widget.BottomNavigationView
             android:id="@+id/navigation"

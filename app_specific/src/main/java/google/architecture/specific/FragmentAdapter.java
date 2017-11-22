@@ -32,6 +32,6 @@ public class FragmentAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getItemPosition(Object object) {
-        return android.support.v4.view.PagerAdapter.POSITION_NONE;
+        return super.getItemPosition(object);
     }
 }
