@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">app_specific</string>
+    <string name="title_home">news</string>
+    <string name="title_dashboard">girls</string>
+    <string name="title_notifications">about</string>
 </resources>

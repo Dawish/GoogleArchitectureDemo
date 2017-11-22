@@ -1,6 +1,7 @@
 package google.architecture.common.util;
 
 import android.databinding.BindingAdapter;
+import android.support.design.widget.BottomNavigationView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 
@@ -16,5 +17,9 @@ public class BindingUtils {
             image.setImageURI(uri);
         }
     }
-
+    @BindingAdapter("bind:onNavigationItemSelectedListener")
+    public static void setOnNavigationItemSelectedListener(
+            BottomNavigationView view, BottomNavigationView.OnNavigationItemSelectedListener listener) {
+        view.setOnNavigationItemSelectedListener(listener);
+    }
 }
