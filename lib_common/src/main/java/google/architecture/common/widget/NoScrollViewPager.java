@@ -11,7 +11,8 @@ import android.view.MotionEvent;
  */
 public class NoScrollViewPager extends ViewPager {
 
-    private boolean isPagingEnabled = true;
+    //是否可以进行滑动
+    private boolean isCanScroll  = false;
 
     public NoScrollViewPager(Context context) {
         super(context);
@@ -21,18 +22,22 @@ public class NoScrollViewPager extends ViewPager {
         super(context, attrs);
     }
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        return this.isPagingEnabled && super.onTouchEvent(event);
+    /**
+     * 设置其是否能滑动换页
+     * @param isCanScroll false 不能换页， true 可以滑动换页
+     */
+    public void setScanScroll(boolean isCanScroll) {
+        this.isCanScroll = isCanScroll;
     }
 
     @Override
-    public boolean onInterceptTouchEvent(MotionEvent event) {
-        return this.isPagingEnabled && super.onInterceptTouchEvent(event);
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        return isCanScroll && super.onInterceptTouchEvent(ev);
     }
 
-    public void setPagerEnabled(boolean b) {
-        this.isPagingEnabled = b;
-    }
+    @Override
+    public boolean onTouchEvent(MotionEvent ev) {
+        return isCanScroll && super.onTouchEvent(ev);
 
+    }
 }

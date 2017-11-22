@@ -2,5 +2,5 @@
     <string name="app_name">module_news</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">FragmentNews</string>
+    <string name="news_fragment">FragmentNews</string>
 </resources>
