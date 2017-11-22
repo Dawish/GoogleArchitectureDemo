@@ -20,7 +20,8 @@ public class DynamicDataRepository {
 
         MutableLiveData<T> applyData = new MutableLiveData<>();
 
-        ApiClient.getDynamicDataService(url).getDynamicData(url).subscribeOn(Schedulers.io())
+        ApiClient.getDynamicDataService(url).getDynamicData(url)
+                .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<T>() {
             @Override
             public void onSubscribe(Disposable d) {
