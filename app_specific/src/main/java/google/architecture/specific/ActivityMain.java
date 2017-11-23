@@ -55,12 +55,12 @@ public class ActivityMain extends BaseActivity {
          mainBinding.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener);
          mPager = mainBinding.containerPager;
 
-        BaseFragment fragmentGirls = (BaseFragment) ARouter.getInstance().build( "/girls/list/fragment" ).navigation();
         BaseFragment fragmentNews = (BaseFragment) ARouter.getInstance().build( "/news/list/fragment" ).navigation();
+        BaseFragment fragmentGirls = (BaseFragment) ARouter.getInstance().build( "/girls/list/fragment" ).navigation();
         BaseFragment fragmentAbout = (BaseFragment) ARouter.getInstance().build( "/about/fragment" ).navigation();
 
-        mFragments.add(fragmentGirls);
         mFragments.add(fragmentNews);
+        mFragments.add(fragmentGirls);
         mFragments.add(fragmentAbout);
 
         mAdapter = new FragmentAdapter(getSupportFragmentManager(), mFragments);

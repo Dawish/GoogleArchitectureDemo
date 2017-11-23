@@ -10,39 +10,31 @@
         <variable name="callback"
                   type="google.architecture.girls.GirlItemClickCallback"/>
     </data>
-    <android.support.v7.widget.CardView
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/cardview_shadow_end_color"
-        android:layout_marginLeft="@dimen/size_16dp"
-        android:layout_marginRight="@dimen/size_16dp"
-        android:layout_marginTop="@dimen/size_8dp"
-        android:minHeight="@dimen/size_64dp"
-        android:onClick="@{() ->  callback.onClick(girlsItem)}"
-        android:orientation="horizontal"
-        android:padding="8dp"
-        app:cardUseCompatPadding="true">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        android:minHeight="@dimen/size_180dp"
+        android:layout_marginLeft="@dimen/size_4dp"
+        android:layout_marginRight="@dimen/size_4dp"
+        android:layout_marginTop="@dimen/size_4dp"
+        android:onClick="@{() ->  callback.onClick(girlsItem)}">
 
             <com.facebook.drawee.view.SimpleDraweeView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                fresco:actualImageScaleType="centerCrop"
                 bind:image="@{girlsItem.url}"
-                android:adjustViewBounds="true"/>
+                android:adjustViewBounds="true"
+                fresco:actualImageScaleType="centerCrop" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
                 android:gravity="center"
-                android:padding="8dp"
+                android:layout_gravity="bottom"
+                android:padding="@dimen/size_4dp"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp"
+                android:textSize="@dimen/text_size_20sp"
                 android:background="#66000000"
                 android:text="@{girlsItem.who}"/>
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
+    </FrameLayout>
 </layout>

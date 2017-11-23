@@ -11,6 +11,9 @@
         <variable
             name="girlsViewModel"
             type="google.architecture.coremodel.viewmodel.GirlsViewModel"/>
+        <variable
+            name="recyclerAdapter"
+            type="android.support.v7.widget.RecyclerView.Adapter"/>
     </data>
 
     <LinearLayout
@@ -33,6 +36,7 @@
                     android:contentDescription="girls list"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    app:adapter="@{recyclerAdapter}"
                     app:layoutManager="LinearLayoutManager" />
             </FrameLayout>
         </FrameLayout>

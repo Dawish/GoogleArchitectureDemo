@@ -63,17 +63,19 @@ public class GirlsViewModel extends AndroidViewModel {
 
                             @Override
                             public void onNext(GirlsData value) {
+                                Log.i("danxx", "setValue------>");
                                 applyData.setValue(value);
                             }
 
                             @Override
                             public void onError(Throwable e) {
-
+                                Log.i("danxx", "onError------>");
+                                e.printStackTrace();
                             }
 
                             @Override
                             public void onComplete() {
-
+                                Log.i("danxx", "onComplete------>");
                             }
                         });
                 return applyData;

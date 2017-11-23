@@ -1,14 +1,28 @@
 package google.architecture.girls;
 
+import android.arch.lifecycle.Observer;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
+
+import java.util.concurrent.TimeUnit;
 
 import google.architecture.common.base.BaseFragment;
+import google.architecture.coremodel.datamodel.http.entities.GirlsData;
+import google.architecture.coremodel.viewmodel.GirlsViewModel;
+import google.architecture.girls.databinding.FragmentGirlsBinding;
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
 
 
 /**
@@ -16,36 +30,15 @@ import google.architecture.common.base.BaseFragment;
  */
 @Route(path = "/girls/list/fragment")
 public class FragmentGirls extends BaseFragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
+    FragmentGirlsBinding girlsBinding;
+
+    GirlsAdapter            girlsAdapter;
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
-    public FragmentGirls() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentGirls.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static FragmentGirls newInstance(String param1, String param2) {
-        FragmentGirls fragment = new FragmentGirls();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,8 +52,39 @@ public class FragmentGirls extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_girls, container, false);
+        ARouter.getInstance().inject(FragmentGirls.this);
+        girlsBinding = DataBindingUtil.inflate(inflater,R.layout.fragment_girls,container,false);
+
+        girlsAdapter = new GirlsAdapter(girlItemClickCallback);
+        girlsBinding.setRecyclerAdapter(girlsAdapter);
+        final GirlsViewModel girlsViewModel = new GirlsViewModel(getActivity().getApplication());
+
+        subscribeToModel(girlsViewModel);
+
+        return girlsBinding.getRoot();
     }
 
+
+    GirlItemClickCallback   girlItemClickCallback = new GirlItemClickCallback() {
+        @Override
+        public void onClick(GirlsData.ResultsBean fuliItem) {
+            Toast.makeText(getContext(), fuliItem.getDesc(), Toast.LENGTH_SHORT).show();
+        }
+    };
+    /**
+     * 订阅数据变化来刷新UI
+     * @param model
+     */
+    private void subscribeToModel(final GirlsViewModel model){
+        //观察数据变化来刷新UI
+        model.getLiveObservableData().observe(FragmentGirls.this, new Observer<GirlsData>() {
+            @Override
+            public void onChanged(@Nullable GirlsData girlsData) {
+                Log.i("danxx", "subscribeToModel onChanged onChanged");
+                model.setUiObservableData(girlsData);
+                girlsAdapter.setGirlsList(girlsData.getResults());
+            }
+        });
+    }
 
 }

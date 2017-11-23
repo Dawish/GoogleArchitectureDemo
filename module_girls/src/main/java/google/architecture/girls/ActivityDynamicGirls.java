@@ -47,7 +47,8 @@ public class ActivityDynamicGirls extends BaseActivity {
         DynamicGirlsViewModel dynamicGirlsViewModel = new DynamicGirlsViewModel(ActivityDynamicGirls.this.getApplication(), fullUrl);
 
         girlsAdapter = new GirlsAdapter(girlItemClickCallback);
-        activityGirlsBinding.girlsList.setAdapter(girlsAdapter);
+//        activityGirlsBinding.girlsList.setAdapter(girlsAdapter);
+        activityGirlsBinding.setRecyclerAdapter(girlsAdapter);
         subscribeToModel(dynamicGirlsViewModel);
 
     }

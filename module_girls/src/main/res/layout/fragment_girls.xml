@@ -1,14 +1,36 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="google.architecture.girls.FragmentGirls">
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="girlsViewModel"
+            type="google.architecture.coremodel.viewmodel.GirlsViewModel"/>
+        <variable
+            name="recyclerAdapter"
+            type="android.support.v7.widget.RecyclerView.Adapter"/>
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textSize="@dimen/text_size_20sp"
-        android:text="@string/girls_fragment" />
+        android:background="@color/cardview_light_background"
+        android:orientation="vertical">
 
-</FrameLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/girls_list"
+            android:contentDescription="girls list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:adapter="@{recyclerAdapter}"
+            app:layoutManager="StaggeredGridLayoutManager"
+            android:orientation="vertical"
+            app:spanCount="2"/>
+
+    </LinearLayout>
+
+</layout>
