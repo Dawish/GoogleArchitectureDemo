@@ -43,7 +43,7 @@ public class BaseViewModel<T> extends AndroidViewModel {
     }
 
 
-    public BaseViewModel(@NonNull Application application, String fullUrl) {
+    public BaseViewModel(@NonNull Application application, String fullUrl, Class<T> T) {
         super(application);
 
         DynamicDataRepository.getDynamicData(fullUrl, getTClass())
