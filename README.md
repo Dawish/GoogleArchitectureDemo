@@ -22,9 +22,13 @@
 5. 更低的耦合把各个模块分开开发，分开测试，可以分给不同的开发人员来完成。
 
 # 二、MVVM组件化示例项目架构分析
+
 下图是项目模块和工程之间的依赖关系：
+
 ![4-MVVM组件化示例项目架构图](http://upload-images.jianshu.io/upload_images/1813550-bbd85084c606df88.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 下图是工程Android Studio中的目录结构：
+
 ![5-工程目录结构](http://upload-images.jianshu.io/upload_images/1813550-6b400e335063a028.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 3.1 各模块和彼此之间的关系解释：
