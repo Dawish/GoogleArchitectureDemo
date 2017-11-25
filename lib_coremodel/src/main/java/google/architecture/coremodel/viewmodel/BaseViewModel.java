@@ -47,6 +47,7 @@ public class BaseViewModel<T> extends AndroidViewModel {
                 .observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<ResponseBody>() {
             @Override
             public void onSubscribe(Disposable d) {
+                mDisposable.add(d);
             }
 
             @Override
