@@ -1,6 +1,8 @@
 # GoogleArchitectureDemo
 谷歌最新MVVM架构，基于dataBinding、lifecycle、retrofit2、rxjava2、okhttp、fresco。
 
+>[简书博客地址:http://www.jianshu.com/p/c0988e7f31fd](http://www.jianshu.com/p/c0988e7f31fd)
+
 # 一、MVVM架构优势
 [《两张图看懂Android开发中MVC与MVP的区别》](http://blog.csdn.net/u010072711/article/details/77132403) 前面两张图真是了MVC和MVP的区别，我这里也来一张图看看MVVM:
 
