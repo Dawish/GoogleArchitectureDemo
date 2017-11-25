@@ -43,7 +43,7 @@ public class ActivityDynamicGirls extends BaseActivity {
         if(TextUtils.isEmpty(fullUrl)){
             return;
         }
-        fullUrl = fullUrl.replaceAll(ApiConstants.GankHost, "");
+
         DynamicGirlsViewModel dynamicGirlsViewModel = new DynamicGirlsViewModel(ActivityDynamicGirls.this.getApplication(), fullUrl);
 
         girlsAdapter = new GirlsAdapter(girlItemClickCallback);

@@ -1,57 +1,32 @@
 package google.architecture.coremodel.datamodel.http.repository;
 
-import android.arch.lifecycle.MutableLiveData;
-
 import google.architecture.coremodel.datamodel.http.ApiClient;
+import google.architecture.coremodel.util.JsonUtil;
+import google.architecture.coremodel.util.SwitchSchedulers;
 import io.reactivex.Observable;
-import io.reactivex.Observer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
+import io.reactivex.functions.Function;
+import okhttp3.ResponseBody;
 
 /**
  * Created by dxx on 2017/11/20.
- * 动态数据获取
+ * 动态url数据获取
  */
 
 public class DynamicDataRepository {
 
-    public static <T> T getDynamicData(String url, Class<T> clazz) {
+    public static <T>Observable getDynamicData(String pullUrl, final Class<T> clazz) {
 
-        MutableLiveData<T> applyData = new MutableLiveData<>();
-
-        ApiClient.getDynamicDataService(url).getDynamicData(url)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<T>() {
-            @Override
-            public void onSubscribe(Disposable d) {
-            }
-
-            @Override
-            public void onNext(T value) {
-                applyData.setValue(value);
-            }
-
-            @Override
-            public void onError(Throwable e) {
-
-            }
-
-            @Override
-            public void onComplete() {
-
-            }
-        });
-        return applyData.getValue();
+        return
+                ApiClient
+                .getDynamicDataService()
+                .getDynamicData(pullUrl)
+                .compose(SwitchSchedulers.applySchedulers())
+                .map(new Function<ResponseBody, T>() {
+                    @Override
+                    public T apply(ResponseBody responseBody) throws Exception {
+                        return JsonUtil.Str2JsonBean(responseBody.string(), clazz);
+                    }
+                });
     }
 
-    /**
-     * 获取动态url的Observable
-     * @param url
-     * @return
-     */
-    public static Observable getDynamicDataObservable(String url) {
-
-        return ApiClient.getDynamicDataService(url).getDynamicData(url);
-    }
 }

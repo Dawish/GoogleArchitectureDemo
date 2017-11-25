@@ -29,12 +29,11 @@ public class ApiClient{
 
     /**
      * 动态url获取数据
-     * @param url
      * @return
      */
-    public static DynamicApiService getDynamicDataService(String url){
+    public static DynamicApiService getDynamicDataService(){
 
-        DynamicApiService dynamicApiService = ApiClient.initService(url, DynamicApiService.class);
+        DynamicApiService dynamicApiService = ApiClient.initService("", DynamicApiService.class);
 
         return dynamicApiService;
     }
@@ -42,27 +41,37 @@ public class ApiClient{
      * 获得想要的 retrofit service
      * @param baseUrl  数据请求url
      * @param clazz    想要的 retrofit service 接口，Retrofit会代理生成对应的实体类
-     * @param <T>
+     * @param <T>      api service
      * @return
      */
-    public static <T> T initService(String baseUrl, Class<T> clazz) {
+    private static <T> T initService(String baseUrl, Class<T> clazz) {
+        return getRetrofitInstance().create(clazz);
+    }
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(baseUrl)
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .client(getOkHttpClientInstance())
-                .build();
-
-        return retrofit.create(clazz);
+    /**单例retrofit*/
+    private static Retrofit retrofitInstance;
+    private static Retrofit getRetrofitInstance(){
+        if (retrofitInstance == null) {
+            synchronized (ApiClient.class) {
+                if (retrofitInstance == null) {
+                    retrofitInstance = new Retrofit.Builder()
+                            .baseUrl(ApiConstants.GankHost)
+                            .addConverterFactory(GsonConverterFactory.create())
+                            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                            .client(getOkHttpClientInstance())
+                            .build();
+                }
+            }
+        }
+        return retrofitInstance;
     }
 
     /**单例OkHttpClient*/
-    private static OkHttpClient OkHttpClientInstance;
-    public static OkHttpClient getOkHttpClientInstance(){
-        if (OkHttpClientInstance == null) {
+    private static OkHttpClient okHttpClientInstance;
+    private static OkHttpClient getOkHttpClientInstance(){
+        if (okHttpClientInstance == null) {
             synchronized (ApiClient.class) {
-                if (OkHttpClientInstance == null) {
+                if (okHttpClientInstance == null) {
                     OkHttpClient.Builder builder = new OkHttpClient().newBuilder();
                     if (BuildConfig.DEBUG) {
                         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
@@ -71,11 +80,11 @@ public class ApiClient{
 //                      builder.addNetworkInterceptor(new StethoInterceptor());
 //                      BuildConfig.STETHO.addNetworkInterceptor(builder);
                     }
-                    OkHttpClientInstance = builder.build();
+                    okHttpClientInstance = builder.build();
                 }
             }
         }
-        return OkHttpClientInstance;
+        return okHttpClientInstance;
     }
 
 }

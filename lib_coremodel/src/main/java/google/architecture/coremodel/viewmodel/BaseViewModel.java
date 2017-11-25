@@ -12,8 +12,10 @@ import java.lang.reflect.ParameterizedType;
 
 import google.architecture.coremodel.datamodel.http.ApiClient;
 import google.architecture.coremodel.datamodel.http.ApiConstants;
+import google.architecture.coremodel.datamodel.http.repository.DynamicDataRepository;
 import google.architecture.coremodel.datamodel.http.service.DynamicApiService;
 import google.architecture.coremodel.util.JsonUtil;
+import google.architecture.coremodel.util.SwitchSchedulers;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -43,22 +45,20 @@ public class BaseViewModel<T> extends AndroidViewModel {
 
     public BaseViewModel(@NonNull Application application, String fullUrl) {
         super(application);
-        ApiClient.initService(ApiConstants.GankHost, DynamicApiService.class).getDynamicData(fullUrl).subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<ResponseBody>() {
+
+        DynamicDataRepository.getDynamicData(fullUrl, getTClass())
+                .compose(SwitchSchedulers.applySchedulers())
+                .subscribe(new Observer<T>() {
             @Override
             public void onSubscribe(Disposable d) {
                 mDisposable.add(d);
             }
 
             @Override
-            public void onNext(ResponseBody value) {
-               if(null != value){
-                   try {
-                       liveObservableData.setValue(JsonUtil.Str2JsonBean(value.string(), getTClass()));
-                   } catch (IOException e) {
-                       e.printStackTrace();
-                   }
-               }
+            public void onNext(T value) {
+                if(null != value){
+                    liveObservableData.setValue(value);
+                }
             }
 
             @Override
@@ -71,6 +71,7 @@ public class BaseViewModel<T> extends AndroidViewModel {
 
             }
         });
+
     }
 
     /**
