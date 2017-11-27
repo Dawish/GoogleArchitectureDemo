@@ -13,17 +13,17 @@ package google.architecture.common.base;
 public class ARouterPath {
 
     /**妹子列表Activity*/
-    public static final String GirlsListAty = "/girls/list";
+    public static final String GirlsListAty = "/girls/aty/list";
 
     /**新闻列表Activity*/
-    public static final String NewsListAty = "/news/list";
+    public static final String NewsListAty = "/news/aty/list";
 
     /**妹子列表Fragment*/
-    public static final String GirlsListFgt = "/girls/list";
+    public static final String GirlsListFgt = "/girls/aty/fgt/list";
 
     /**新闻列表Fragment*/
-    public static final String NewsListFgt = "/news/list";
+    public static final String NewsListFgt = "/news/fgt/list";
 
     /**关于Fragment*/
-    public static final String AboutFgt = "/about/fragment";
+    public static final String AboutFgt = "/about/fgt/fragment";
 }
