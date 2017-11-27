@@ -10,13 +10,14 @@ import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 
+import google.architecture.common.base.ARouterPath;
 import google.architecture.common.base.BaseActivity;
 import google.architecture.common.util.Utils;
 import google.architecture.coremodel.datamodel.http.entities.GirlsData;
 import google.architecture.coremodel.viewmodel.GirlsViewModel;
 import google.architecture.girls.databinding.ActivityGirlsBinding;
 
-@Route(path = "/girls/list")
+@Route(path = ARouterPath.GirlsListAty)
 public class ActivityGirls extends BaseActivity {
 
     GirlsAdapter            girlsAdapter;

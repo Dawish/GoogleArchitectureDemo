@@ -11,6 +11,12 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //ARouter
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
     }
     buildTypes {
         release {
@@ -40,4 +46,5 @@ dependencies {
         implementation project(':module_girls')
         implementation project(':module_news')
     }
+    annotationProcessor deps.arouter.compiler
 }

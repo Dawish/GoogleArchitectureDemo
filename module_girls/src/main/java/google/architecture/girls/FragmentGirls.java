@@ -14,21 +14,17 @@ import android.widget.Toast;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 
-import java.util.concurrent.TimeUnit;
-
+import google.architecture.common.base.ARouterPath;
 import google.architecture.common.base.BaseFragment;
 import google.architecture.coremodel.datamodel.http.entities.GirlsData;
 import google.architecture.coremodel.viewmodel.GirlsViewModel;
 import google.architecture.girls.databinding.FragmentGirlsBinding;
-import io.reactivex.Observable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
 
 
 /**
  * @Desc FragmentGirls
  */
-@Route(path = "/girls/list/fragment")
+@Route(path = ARouterPath.GirlsListFgt)
 public class FragmentGirls extends BaseFragment {
 
     FragmentGirlsBinding girlsBinding;

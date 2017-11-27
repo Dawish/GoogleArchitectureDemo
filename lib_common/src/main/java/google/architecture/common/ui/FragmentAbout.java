@@ -8,12 +8,13 @@ import android.view.ViewGroup;
 import com.alibaba.android.arouter.facade.annotation.Route;
 
 import google.architecture.common.R;
+import google.architecture.common.base.ARouterPath;
 import google.architecture.common.base.BaseFragment;
 
 /**
- *
+ * 关于页面
  */
-@Route(path = "/about/fragment")
+@Route(path = ARouterPath.AboutFgt)
 public class FragmentAbout extends BaseFragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

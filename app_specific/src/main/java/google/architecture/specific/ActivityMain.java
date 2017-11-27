@@ -13,6 +13,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import java.util.ArrayList;
 import java.util.List;
 
+import google.architecture.common.base.ARouterPath;
 import google.architecture.common.base.BaseActivity;
 import google.architecture.common.base.BaseFragment;
 import google.architecture.common.util.BindingUtils;
@@ -55,9 +56,9 @@ public class ActivityMain extends BaseActivity {
          mainBinding.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener);
          mPager = mainBinding.containerPager;
 
-        BaseFragment fragmentNews = (BaseFragment) ARouter.getInstance().build( "/news/list/fragment" ).navigation();
-        BaseFragment fragmentGirls = (BaseFragment) ARouter.getInstance().build( "/girls/list/fragment" ).navigation();
-        BaseFragment fragmentAbout = (BaseFragment) ARouter.getInstance().build( "/about/fragment" ).navigation();
+        BaseFragment fragmentNews = (BaseFragment) ARouter.getInstance().build(ARouterPath.NewsListFgt).navigation();
+        BaseFragment fragmentGirls = (BaseFragment) ARouter.getInstance().build( ARouterPath.GirlsListFgt).navigation();
+        BaseFragment fragmentAbout = (BaseFragment) ARouter.getInstance().build( ARouterPath.AboutFgt ).navigation();
 
         mFragments.add(fragmentNews);
         mFragments.add(fragmentGirls);

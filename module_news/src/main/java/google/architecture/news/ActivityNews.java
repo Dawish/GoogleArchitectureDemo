@@ -9,12 +9,13 @@ import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 
+import google.architecture.common.base.ARouterPath;
 import google.architecture.common.base.BaseActivity;
 import google.architecture.coremodel.datamodel.http.entities.NewsData;
 import google.architecture.coremodel.viewmodel.NewsViewModel;
 import google.architecture.news.databinding.ActivityNewsBinding;
 
-@Route(path = "/news/list")
+@Route(path = ARouterPath.NewsListAty)
 public class ActivityNews extends BaseActivity {
 
     NewsAdapter newsAdapter;

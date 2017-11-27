@@ -10,13 +10,14 @@ import android.view.ViewGroup;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 
+import google.architecture.common.base.ARouterPath;
 import google.architecture.common.base.BaseFragment;
 
 
 /**
  * @Desc FragmentNews
  */
-@Route(path = "/news/list/fragment")
+@Route(path = ARouterPath.NewsListFgt)
 public class FragmentNews extends BaseFragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
