@@ -11,6 +11,7 @@ import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.callback.NavigationCallback;
 import com.alibaba.android.arouter.launcher.ARouter;
 
+import google.architecture.common.base.ARouterPath;
 import google.architecture.common.base.BaseActivity;
 import google.architecture.coremodel.viewmodel.GirlsViewModel;
 import google.architecture.universal.databinding.ActivityMainBinding;
@@ -35,16 +36,16 @@ public class ActivityMain extends BaseActivity {
                     Log.i("danxx", "onClick toGirls");
                     //跳转到GirlsActivity
                     ARouter.getInstance()
-                            .build("/girls/list")
+                            .build(ARouterPath.GirlsListAty)
                             /**可以针对性跳转跳转动画*/
                             .withTransition(R.anim.activity_up_in, R.anim.activity_up_out)
                             .navigation(ActivityMain.this);
                     break;
                 case R.id.toNews:
                     Log.i("danxx", "onClick toNews");
-                    //跳转到GirlsActivity
+                    //跳转到NewsActivity
                     ARouter.getInstance()
-                            .build("/news/list")
+                            .build(ARouterPath.NewsListAty)
                             .withTransition(R.anim.activity_up_in, R.anim.activity_up_out)
                             .navigation(ActivityMain.this, 2, new NavigationCallback() {
                                 @Override
@@ -72,7 +73,7 @@ public class ActivityMain extends BaseActivity {
                     Log.i("danxx", "onClick toNews");
                     //跳转到ActivityDynamicGirls (模拟动态url)
                     ARouter.getInstance()
-                            .build("/dynamic/girls/list")
+                            .build(ARouterPath.DynaGirlsListAty)
                             .withString("fullUrl", "http://gank.io/api/data/%E7%A6%8F%E5%88%A9/20/1")
                             .withTransition(R.anim.activity_up_in, R.anim.activity_up_out)
                             .navigation(ActivityMain.this, 3);

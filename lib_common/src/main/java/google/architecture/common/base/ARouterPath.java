@@ -7,13 +7,15 @@ package google.architecture.common.base;
  * Aty : Activity
  * Fgt : Fragment
  *
- *
  */
 
 public class ARouterPath {
 
     /**妹子列表Activity*/
     public static final String GirlsListAty = "/girls/aty/list";
+
+    /**妹子列表动态Activity*/
+    public static final String DynaGirlsListAty = "/girls/dynaty/list";
 
     /**新闻列表Activity*/
     public static final String NewsListAty = "/news/aty/list";
