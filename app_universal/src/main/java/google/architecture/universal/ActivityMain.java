@@ -27,7 +27,7 @@ public class ActivityMain extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        //注入才可以自动初始化Autowired注解声明的变量
         ARouter.getInstance().inject(ActivityMain.this);
 
         setTitle("UniversalApp_ActivityMain");
