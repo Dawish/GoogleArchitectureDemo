@@ -31,7 +31,6 @@ public class ActivityGirls extends BaseActivity {
         activityGirlsBinding = DataBindingUtil.setContentView(ActivityGirls.this,R.layout.activity_girls);
         GirlsViewModel girlsViewModel = new GirlsViewModel(ActivityGirls.this.getApplication());
         girlsAdapter = new GirlsAdapter(girlItemClickCallback);
-//        activityGirlsBinding.girlsList.setAdapter(girlsAdapter);
         activityGirlsBinding.setRecyclerAdapter(girlsAdapter);
         subscribeToModel(girlsViewModel);
 

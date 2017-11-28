@@ -8,23 +8,34 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.alibaba.android.arouter.facade.Postcard;
+import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.callback.NavigationCallback;
 import com.alibaba.android.arouter.launcher.ARouter;
 
 import google.architecture.common.base.ARouterPath;
 import google.architecture.common.base.BaseActivity;
+import google.architecture.common.service.TestService;
 import google.architecture.coremodel.viewmodel.GirlsViewModel;
 import google.architecture.universal.databinding.ActivityMainBinding;
 
 public class ActivityMain extends BaseActivity {
     ActivityMainBinding binding;
+
+    @Autowired(name = "/service/test")
+    TestService testService;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        ARouter.getInstance().inject(ActivityMain.this);
+
         setTitle("UniversalApp_ActivityMain");
         Log.i("danxx", "onCreate onCreate");
         binding = DataBindingUtil.setContentView(ActivityMain.this, R.layout.activity_main);
         binding.setItemClick(itemClick);
+
+        testService.sayHello("ActivityMain invoke 233");
 
     }
 

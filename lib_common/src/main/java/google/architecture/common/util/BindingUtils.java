@@ -14,27 +14,27 @@ import com.facebook.drawee.view.SimpleDraweeView;
 
 public class BindingUtils {
 
-    @BindingAdapter("bind:image")
+    @BindingAdapter("image")
     public static void loadImage(SimpleDraweeView image, String uri){
         if(image!=null){
             image.setImageURI(uri);
         }
     }
 
-    @BindingAdapter("bind:image")
+    @BindingAdapter("image")
     public static void loadImage(SimpleDraweeView image, int id){
         if(image!=null){
             image.setImageResource(id);
         }
     }
 
-    @BindingAdapter("bind:onNavigationItemSelectedListener")
+    @BindingAdapter("onNavigationItemSelectedListener")
     public static void setOnNavigationItemSelectedListener(
             BottomNavigationView view, BottomNavigationView.OnNavigationItemSelectedListener listener) {
         view.setOnNavigationItemSelectedListener(listener);
     }
 
-    @BindingAdapter("bind:viewPagerAdapter")
+    @BindingAdapter("viewPagerAdapter")
     public static void setViewPagerAdapter(ViewPager view, FragmentStatePagerAdapter adapter) {
         view.setAdapter(adapter);
     }
