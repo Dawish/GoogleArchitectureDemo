@@ -19,6 +19,6 @@ public class TestServiceImpl implements TestService {
 
     @Override
     public void init(Context context) {
-        Log.d("danxx", "TestServiceImpl TestServiceImpl");
+        Log.d("danxx", "TestServiceImpl TestServiceImpl init");
     }
 }
