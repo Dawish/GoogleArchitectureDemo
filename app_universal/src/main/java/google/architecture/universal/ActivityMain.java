@@ -22,7 +22,10 @@ public class ActivityMain extends BaseActivity {
     ActivityMainBinding binding;
 
     @Autowired(name = "/service/test")
-    TestService testService;
+    TestService testService1;
+
+    TestService testService2;
+    TestService testService3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +33,18 @@ public class ActivityMain extends BaseActivity {
         //注入才可以自动初始化Autowired注解声明的变量
         ARouter.getInstance().inject(ActivityMain.this);
 
+        testService1.sayHello("Autowired invoke 233");
+
+        testService2 = ARouter.getInstance().navigation(TestService.class);
+        testService2.sayHello("navigation invoke 233");
+
+        testService3 = (TestService) ARouter.getInstance().build("/service/test").navigation();
+        testService3.sayHello("build invoke 233");
+
         setTitle("UniversalApp_ActivityMain");
         Log.i("danxx", "onCreate onCreate");
         binding = DataBindingUtil.setContentView(ActivityMain.this, R.layout.activity_main);
         binding.setItemClick(itemClick);
-
-        testService.sayHello("ActivityMain invoke 233");
 
     }
 
