@@ -55,6 +55,7 @@ public class ActivityMain extends BaseActivity {
 
          mainBinding.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener);
          mPager = mainBinding.containerPager;
+         mPager.setOffscreenPageLimit(3);
 
         BaseFragment fragmentNews = (BaseFragment) ARouter.getInstance().build(ARouterPath.NewsListFgt).navigation();
         BaseFragment fragmentGirls = (BaseFragment) ARouter.getInstance().build( ARouterPath.GirlsListFgt).navigation();
