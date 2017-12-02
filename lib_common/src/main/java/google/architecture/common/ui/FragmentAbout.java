@@ -1,64 +1,78 @@
 package google.architecture.common.ui;
 
+import android.database.DatabaseUtils;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.apkfuns.logutils.LogUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import google.architecture.common.R;
 import google.architecture.common.base.ARouterPath;
 import google.architecture.common.base.BaseFragment;
+import google.architecture.common.databinding.FragmentAboutBinding;
 
 /**
  * 关于页面
  */
 @Route(path = ARouterPath.AboutFgt)
 public class FragmentAbout extends BaseFragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private FragmentAboutBinding fragmentAboutBinding;
 
-    public FragmentAbout() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentAbout.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static FragmentAbout newInstance(String param1, String param2) {
-        FragmentAbout fragment = new FragmentAbout();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    private UserData userData1,userData2;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_about, container, false);
+
+        fragmentAboutBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_about, container, false);
+
+        List<UserData> userList = new ArrayList<>();
+
+        userData1 = new UserData();
+        userData1.setUserName("dawish");
+        userData1.setUserId("1212");
+
+        userData2 = new UserData();
+        userData2.setUserName("dawish_233");
+        userData2.setUserId("2331");
+
+        userList.add(userData1);
+        userList.add(userData2);
+
+        fragmentAboutBinding.setUserList(userList);
+        fragmentAboutBinding.setFragmentAbout(this);
+
+        /**执行executePendingBindings方法开始数据绑定*/
+        fragmentAboutBinding.executePendingBindings();
+
+        LogUtils.d("fragmentAboutBinding--->");
+
+        fragmentAboutBinding.btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeName();
+            }
+        });
+
+        return fragmentAboutBinding.getRoot();
     }
+
+    public void changeName(){
+        userData1.setUserName("Dawish_大D");
+        userData2.setUserName("Dawish_大D_233");
+    }
+
 }

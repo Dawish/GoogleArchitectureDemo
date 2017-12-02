@@ -2,6 +2,8 @@ package google.architecture.common.base;
 
 import android.app.Application;
 
+import com.apkfuns.logutils.LogUtils;
+
 import java.util.List;
 
 import google.architecture.common.util.Utils;
@@ -36,6 +38,13 @@ public class BaseApplication extends Application {
         for (ApplicationDelegate delegate : mAppDelegateList) {
             delegate.onCreate();
         }
+
+        LogUtils.getLogConfig()
+                .configAllowLog(true)
+                .configTagPrefix("danxx")
+                .configShowBorders(true)
+                .configFormatTag("%d{HH:mm:ss:SSS} %t %c{-5}");
+
     }
 
     @Override

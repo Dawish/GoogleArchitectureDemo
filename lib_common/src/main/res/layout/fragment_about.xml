@@ -1,14 +1,59 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context="google.architecture.common.ui.FragmentAbout">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+        <import type="java.util.List" />
+
+        <import type="google.architecture.common.ui.UserData" />
+
+        <variable
+            name="userList"
+            type="List&lt;UserData&gt;" />
+
+        <variable
+            name="fragmentAbout"
+            type="google.architecture.common.ui.FragmentAbout"/>
+
+    </data>
+
+
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textSize="@dimen/text_size_20sp"
-        android:text="@string/about_fragment" />
+        android:gravity="center">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about_fragment"
+            android:textSize="@dimen/text_size_20sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_20dp"
+            android:text="@{userList.get(0).userName}"
+            android:textSize="@dimen/text_size_20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_20dp"
+            android:text="@{userList.get(1).userName}"
+            android:textSize="@dimen/text_size_20sp" />
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_20dp"
+            android:text="Change User Name"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_size_20sp" />
+
+    </LinearLayout>
+</layout>
