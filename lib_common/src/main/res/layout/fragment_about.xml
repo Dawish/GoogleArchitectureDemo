@@ -13,8 +13,8 @@
             type="List&lt;UserData&gt;" />
 
         <variable
-            name="fragmentAbout"
-            type="google.architecture.common.ui.FragmentAbout"/>
+            name="userDataOF"
+            type="google.architecture.common.ui.UserDataOF"/>
 
     </data>
 
@@ -44,6 +44,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/size_20dp"
             android:text="@{userList.get(1).userName}"
+            android:textSize="@dimen/text_size_20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_20dp"
+            android:text="@{userDataOF.userName.get()}"
             android:textSize="@dimen/text_size_20sp" />
 
         <Button

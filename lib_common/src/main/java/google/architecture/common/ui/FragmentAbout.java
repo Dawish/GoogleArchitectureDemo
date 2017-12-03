@@ -2,6 +2,8 @@ package google.architecture.common.ui;
 
 import android.database.DatabaseUtils;
 import android.databinding.DataBindingUtil;
+import android.databinding.Observable;
+import android.databinding.ObservableField;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +29,7 @@ public class FragmentAbout extends BaseFragment {
     private FragmentAboutBinding fragmentAboutBinding;
 
     private UserData userData1,userData2;
+    private UserDataOF userDataOF;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,7 +56,12 @@ public class FragmentAbout extends BaseFragment {
         userList.add(userData2);
 
         fragmentAboutBinding.setUserList(userList);
-        fragmentAboutBinding.setFragmentAbout(this);
+
+        userDataOF = new UserDataOF();
+        userDataOF.userName.set("dxxx_5");
+        userDataOF.userId.set("xxxxxx");
+
+        fragmentAboutBinding.setUserDataOF(userDataOF);
 
         /**执行executePendingBindings方法开始数据绑定*/
         fragmentAboutBinding.executePendingBindings();
@@ -73,6 +81,9 @@ public class FragmentAbout extends BaseFragment {
     public void changeName(){
         userData1.setUserName("Dawish_大D");
         userData2.setUserName("Dawish_大D_233");
+
+        userDataOF.userName.set("Dawish_ofof");
+
     }
 
 }
