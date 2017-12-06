@@ -5,6 +5,7 @@
 
 ## 两个定制app的首页UI图:
 |app_universal                                |              app_specific              |
+| :-------------: |:-------------:| :---------:|
 |    ----                                |                 -----                |
 |`Activity`组建为主,点击会跳转到不同组建库的`Activity`|     通过`ARoyter`获取不同组建库的`Fragment`来展示       |
  ![Alt text](./img/app_universal.png)  |  ![Alt text](./img/app_specific.png) |
