@@ -3,6 +3,12 @@
 
 >[简书博客地址:http://www.jianshu.com/p/c0988e7f31fd](http://www.jianshu.com/p/c0988e7f31fd)
 
+## 两个定制app的首页UI图:
+app_universal                                |              app_specific              |
+    ----                                |                 -----                |
+`Activity`组建为主,点击会跳转到不同组建库的`Activity`|     通过`ARoyter`获取不同组建库的`Fragment`来展示       |
+ ![Alt text](./img/app_universal.png)  |  ![Alt text](./img/app_specific.png) |
+
 # 一、MVVM架构优势
 [《两张图看懂Android开发中MVC与MVP的区别》](http://blog.csdn.net/u010072711/article/details/77132403) 前面两张图真是了MVC和MVP的区别，我这里也来一张图看看MVVM:
 
