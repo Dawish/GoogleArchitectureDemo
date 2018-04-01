@@ -1,10 +1,14 @@
 package google.architecture.common.ui;
 
+import android.arch.lifecycle.LiveData;
+import android.arch.lifecycle.Observer;
 import android.database.DatabaseUtils;
 import android.databinding.DataBindingUtil;
 import android.databinding.Observable;
 import android.databinding.ObservableField;
+import android.location.Location;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,6 +76,23 @@ public class FragmentAbout extends BaseFragment {
             @Override
             public void onClick(View v) {
                 changeName();
+            }
+        });
+
+        LiveData<Location> myLocationListener = LocationLiveData.get(getContext());
+
+        myLocationListener.observe(FragmentAbout.this, new Observer<Location>() {
+            @Override
+            public void onChanged(@Nullable Location location) {
+
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.append("经度 : ");
+                stringBuilder.append(location.getLongitude());
+
+                stringBuilder.append( "   纬度 : " );
+                stringBuilder.append(location.getLatitude());
+
+                fragmentAboutBinding.txtLocation.setText(stringBuilder.toString());
             }
         });
 

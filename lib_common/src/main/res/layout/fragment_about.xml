@@ -62,5 +62,12 @@
             android:textAllCaps="false"
             android:textSize="@dimen/text_size_20sp" />
 
+        <TextView
+            android:id="@+id/txt_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_20dp"
+            android:textSize="@dimen/text_size_20sp" />
+
     </LinearLayout>
 </layout>
