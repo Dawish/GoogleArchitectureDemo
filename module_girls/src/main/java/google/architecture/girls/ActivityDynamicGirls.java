@@ -19,6 +19,7 @@ import google.architecture.coremodel.datamodel.http.entities.GirlsData;
 import google.architecture.coremodel.viewmodel.BaseViewModel;
 import google.architecture.coremodel.viewmodel.DynamicGirlsViewModel;
 import google.architecture.coremodel.viewmodel.GirlsViewModel;
+import google.architecture.coremodel.viewmodel.ViewModelProviders;
 import google.architecture.girls.databinding.ActivityGirlsBinding;
 
 /**
@@ -45,9 +46,11 @@ public class ActivityDynamicGirls extends BaseActivity {
             return;
         }
 
-        DynamicGirlsViewModel dynamicGirlsViewModel = new DynamicGirlsViewModel(ActivityDynamicGirls.this.getApplication(), fullUrl);
+//        DynamicGirlsViewModel dynamicGirlsViewModel = new DynamicGirlsViewModel(ActivityDynamicGirls.this.getApplication(), fullUrl);
+        DynamicGirlsViewModel dynamicGirlsViewModel =
+                ViewModelProviders.of(ActivityDynamicGirls.this).get(DynamicGirlsViewModel.class);
 
-        girlsAdapter = new GirlsAdapter(girlItemClickCallback);
+                girlsAdapter = new GirlsAdapter(girlItemClickCallback);
 //        activityGirlsBinding.girlsList.setAdapter(girlsAdapter);
         activityGirlsBinding.setRecyclerAdapter(girlsAdapter);
         subscribeToModel(dynamicGirlsViewModel);

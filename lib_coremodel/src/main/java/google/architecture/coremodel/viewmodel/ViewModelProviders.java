@@ -12,6 +12,8 @@ import android.support.v4.app.FragmentActivity;
 /**
  * Created by danxx on 2018/3/31.
  * Global ViewModel Provider
+ * ViewModel的创建不可直接new，需要使用这个{@link ViewModelProviders}才能与Activity或者
+ * Fragment的生命周期关联起来！
  */
 
 public class ViewModelProviders {

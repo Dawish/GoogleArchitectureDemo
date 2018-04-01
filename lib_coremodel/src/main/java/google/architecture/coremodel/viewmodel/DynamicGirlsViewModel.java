@@ -15,4 +15,9 @@ public class DynamicGirlsViewModel extends BaseViewModel<GirlsData> {
     public DynamicGirlsViewModel(@NonNull Application application, String fullUrl) {
         super(application, fullUrl);
     }
+
+    @Override
+    protected void onCleared() {
+        super.onCleared();
+    }
 }
