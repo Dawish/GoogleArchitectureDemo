@@ -13,6 +13,7 @@ import google.architecture.common.base.ARouterPath;
 import google.architecture.common.base.BaseActivity;
 import google.architecture.coremodel.datamodel.http.entities.NewsData;
 import google.architecture.coremodel.viewmodel.NewsViewModel;
+import google.architecture.coremodel.viewmodel.ViewModelProviders;
 import google.architecture.news.databinding.ActivityNewsBinding;
 
 @Route(path = ARouterPath.NewsListAty)
@@ -27,7 +28,10 @@ public class ActivityNews extends BaseActivity {
         setTitle("Module_ActivityNews");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         activityNewsBinding = DataBindingUtil.setContentView(ActivityNews.this,R.layout.activity_news);
-        NewsViewModel newsViewModel = new NewsViewModel(ActivityNews.this.getApplication());
+//        NewsViewModel newsViewModel = new NewsViewModel(ActivityNews.this.getApplication());
+        /**使用ViewModelProvider才可以使ViewModel跟Activity的生命周期关联一起*/
+        NewsViewModel newsViewModel =
+                ViewModelProviders.of(ActivityNews.this).get(NewsViewModel.class);
         newsAdapter = new NewsAdapter(girlItemClickCallback);
         activityNewsBinding.newsList.setAdapter(newsAdapter);
         subscribeToModel(newsViewModel);

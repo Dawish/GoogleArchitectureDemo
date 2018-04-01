@@ -9,6 +9,8 @@ import android.databinding.ObservableField;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
+import com.apkfuns.logutils.LogUtils;
+
 import google.architecture.coremodel.datamodel.http.entities.GirlsData;
 import google.architecture.coremodel.datamodel.http.entities.NewsData;
 import google.architecture.coremodel.datamodel.http.repository.GankDataRepository;
@@ -100,6 +102,7 @@ public class NewsViewModel extends AndroidViewModel {
     @Override
     protected void onCleared() {
         super.onCleared();
+        LogUtils.d("========NewsViewModel--onCleared=========");
         mDisposable.clear();
     }
 }

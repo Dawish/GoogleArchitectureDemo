@@ -10,6 +10,8 @@ import android.databinding.ObservableField;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
+import com.apkfuns.logutils.LogUtils;
+
 import google.architecture.coremodel.datamodel.http.entities.GirlsData;
 import google.architecture.coremodel.datamodel.http.repository.GankDataRepository;
 import google.architecture.coremodel.util.NetUtils;
@@ -102,5 +104,6 @@ public class GirlsViewModel extends AndroidViewModel {
     protected void onCleared() {
         super.onCleared();
         mDisposable.clear();
+        LogUtils.d("=======GirlsViewModel--onCleared=========");
     }
 }

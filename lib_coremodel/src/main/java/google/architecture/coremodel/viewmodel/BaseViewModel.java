@@ -7,6 +7,8 @@ import android.arch.lifecycle.MutableLiveData;
 import android.databinding.ObservableField;
 import android.support.annotation.NonNull;
 
+import com.apkfuns.logutils.LogUtils;
+
 import java.io.IOException;
 import java.lang.reflect.ParameterizedType;
 
@@ -45,7 +47,7 @@ public class BaseViewModel<T> extends AndroidViewModel {
 
     public BaseViewModel(@NonNull Application application, String fullUrl) {
         super(application);
-
+        LogUtils.d("=======BaseViewModel--onCreate=========");
         DynamicDataRepository.getDynamicData(fullUrl, getTClass())
                 .compose(SwitchSchedulers.applySchedulers())
                 .subscribe(new Observer<T>() {
@@ -99,5 +101,6 @@ public class BaseViewModel<T> extends AndroidViewModel {
     protected void onCleared() {
         super.onCleared();
         mDisposable.clear();
+        LogUtils.d("=======BaseViewModel--onCleared=========");
     }
 }

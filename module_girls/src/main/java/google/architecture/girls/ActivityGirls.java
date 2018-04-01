@@ -1,6 +1,8 @@
 package google.architecture.girls;
 
+import android.app.Activity;
 import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProvider;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,6 +17,7 @@ import google.architecture.common.base.BaseActivity;
 import google.architecture.common.util.Utils;
 import google.architecture.coremodel.datamodel.http.entities.GirlsData;
 import google.architecture.coremodel.viewmodel.GirlsViewModel;
+import google.architecture.coremodel.viewmodel.ViewModelProviders;
 import google.architecture.girls.databinding.ActivityGirlsBinding;
 
 @Route(path = ARouterPath.GirlsListAty)
@@ -29,7 +32,9 @@ public class ActivityGirls extends BaseActivity {
         setTitle("Module_ActivityGirls");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         activityGirlsBinding = DataBindingUtil.setContentView(ActivityGirls.this,R.layout.activity_girls);
-        GirlsViewModel girlsViewModel = new GirlsViewModel(ActivityGirls.this.getApplication());
+//        GirlsViewModel girlsViewModel = new GirlsViewModel(ActivityGirls.this.getApplication());
+        GirlsViewModel girlsViewModel =
+        ViewModelProviders.of(ActivityGirls.this).get(GirlsViewModel.class);
         girlsAdapter = new GirlsAdapter(girlItemClickCallback);
         activityGirlsBinding.setRecyclerAdapter(girlsAdapter);
         subscribeToModel(girlsViewModel);

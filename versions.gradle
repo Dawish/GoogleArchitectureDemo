@@ -4,7 +4,8 @@
     **/
     ext.deps = [:]
     def versions = [:]
-    versions.arch = hasProperty("ARCH_VERSION") ? getProperty("ARCH_VERSION") : "1.0.0-rc1"
+    versions.arch = "1.1.0"
+    versions.room = "1.0.0"
     versions.support = "26.1.0"
     versions.dagger = "2.11"
     versions.junit = "4.12"
@@ -44,10 +45,10 @@
     deps.support = support
 
     def room = [:]
-    room.runtime = "android.arch.persistence.room:runtime:$versions.arch"
-    room.compiler = "android.arch.persistence.room:compiler:$versions.arch"
-    room.rxjava2 = "android.arch.persistence.room:rxjava2:$versions.arch"
-    room.testing = "android.arch.persistence.room:testing:$versions.arch"
+    room.runtime = "android.arch.persistence.room:runtime:$versions.room"
+    room.compiler = "android.arch.persistence.room:compiler:$versions.room"
+    room.rxjava2 = "android.arch.persistence.room:rxjava2:$versions.room"
+    room.testing = "android.arch.persistence.room:testing:$versions.room"
     deps.room = room
 
     def lifecycle = [:]
