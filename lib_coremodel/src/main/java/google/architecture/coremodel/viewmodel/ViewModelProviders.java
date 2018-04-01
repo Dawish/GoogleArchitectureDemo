@@ -53,6 +53,8 @@ public class ViewModelProviders {
     @NonNull
     @MainThread
     public static ViewModelProvider of(@NonNull Fragment fragment) {
+
+        /**获取默认的单例AndroidViewModelFactory，它内部是通过反射来创建具体的ViewModel*/
         ViewModelProvider.AndroidViewModelFactory factory =
                 ViewModelProvider.AndroidViewModelFactory.getInstance(
                         checkApplication(checkActivity(fragment)));
@@ -71,6 +73,7 @@ public class ViewModelProviders {
     @NonNull
     @MainThread
     public static ViewModelProvider of(@NonNull FragmentActivity activity) {
+        /**获取默认的单例AndroidViewModelFactory，它内部是通过反射来创建具体的ViewModel*/
         ViewModelProvider.AndroidViewModelFactory factory =
                 ViewModelProvider.AndroidViewModelFactory.getInstance(
                         checkApplication(activity));
