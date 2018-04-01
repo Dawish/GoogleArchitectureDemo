@@ -45,35 +45,41 @@ public class BaseViewModel<T> extends AndroidViewModel {
     }
 
 
-    public BaseViewModel(@NonNull Application application, String fullUrl) {
+    public BaseViewModel(@NonNull Application application) {
         super(application);
         LogUtils.d("=======BaseViewModel--onCreate=========");
+    }
+
+    /**
+     *
+     * @param fullUrl
+     */
+    public void loadData( String fullUrl ){
         DynamicDataRepository.getDynamicData(fullUrl, getTClass())
                 .compose(SwitchSchedulers.applySchedulers())
                 .subscribe(new Observer<T>() {
-            @Override
-            public void onSubscribe(Disposable d) {
-                mDisposable.add(d);
-            }
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        mDisposable.add(d);
+                    }
 
-            @Override
-            public void onNext(T value) {
-                if(null != value){
-                    liveObservableData.setValue(value);
-                }
-            }
+                    @Override
+                    public void onNext(T value) {
+                        if(null != value){
+                            liveObservableData.setValue(value);
+                        }
+                    }
 
-            @Override
-            public void onError(Throwable e) {
+                    @Override
+                    public void onError(Throwable e) {
 
-            }
+                    }
 
-            @Override
-            public void onComplete() {
+                    @Override
+                    public void onComplete() {
 
-            }
-        });
-
+                    }
+                });
     }
 
     /**

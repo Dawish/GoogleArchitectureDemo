@@ -12,9 +12,10 @@ import google.architecture.coremodel.datamodel.http.entities.GirlsData;
 
 public class DynamicGirlsViewModel extends BaseViewModel<GirlsData> {
 
-    public DynamicGirlsViewModel(@NonNull Application application, String fullUrl) {
-        super(application, fullUrl);
+    public DynamicGirlsViewModel(@NonNull Application application) {
+        super(application);
     }
+
 
     @Override
     protected void onCleared() {
