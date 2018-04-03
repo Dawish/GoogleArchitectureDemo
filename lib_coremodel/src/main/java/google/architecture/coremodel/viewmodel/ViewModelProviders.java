@@ -95,6 +95,7 @@ public class ViewModelProviders {
     @NonNull
     @MainThread
     public static ViewModelProvider of(@NonNull Fragment fragment, @NonNull ViewModelProvider.Factory factory) {
+        //检测Fragment
         checkApplication(checkActivity(fragment));
         return new ViewModelProvider(ViewModelStores.of(fragment), factory);
     }
@@ -109,6 +110,7 @@ public class ViewModelProviders {
     @MainThread
     public static ViewModelProvider of(@NonNull FragmentActivity activity,
                                        @NonNull ViewModelProvider.Factory factory) {
+        //检测activity
         checkApplication(activity);
         return new ViewModelProvider(ViewModelStores.of(activity), factory);
     }
