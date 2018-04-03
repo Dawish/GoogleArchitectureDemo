@@ -20,6 +20,7 @@ public class ViewModelProviders {
 
     /**
      * 通过Activity获取可用的Application
+     * 或者检测Activity是否可用
      * @param activity
      * @return
      */
@@ -34,6 +35,7 @@ public class ViewModelProviders {
 
     /**
      * 通过Fragment获取Activity
+     * 或者检测Fragment是否可用
      * @param fragment
      * @return
      */
