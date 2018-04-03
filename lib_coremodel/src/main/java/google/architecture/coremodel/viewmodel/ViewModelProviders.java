@@ -59,7 +59,7 @@ public class ViewModelProviders {
                 ViewModelProvider.AndroidViewModelFactory.getInstance(
                         checkApplication(checkActivity(fragment)));
         /***
-         *   HashMap存储ViewModel
+         *   利用HolderFragment来关联生命周期并使用HolderFragment中的ViewModelStore的HashMap存储ViewModel
          *   AndroidViewModelFactory创建ViewModel
          */
         return new ViewModelProvider(ViewModelStores.of(fragment), factory);
@@ -78,7 +78,7 @@ public class ViewModelProviders {
                 ViewModelProvider.AndroidViewModelFactory.getInstance(
                         checkApplication(activity));
         /***
-         *   HashMap存储ViewModel
+         *   利用HolderFragment来关联生命周期并使用HolderFragment中的ViewModelStore的HashMap存储ViewModel
          *   AndroidViewModelFactory创建ViewModel
          */
         return new ViewModelProvider(ViewModelStores.of(activity), factory);
