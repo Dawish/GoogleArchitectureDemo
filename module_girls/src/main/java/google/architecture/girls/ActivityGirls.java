@@ -17,7 +17,7 @@ import google.architecture.common.base.BaseActivity;
 import google.architecture.common.util.Utils;
 import google.architecture.coremodel.datamodel.http.entities.GirlsData;
 import google.architecture.coremodel.viewmodel.GirlsViewModel;
-import google.architecture.coremodel.viewmodel.ViewModelProviders;
+import android.arch.lifecycle.ViewModelProviders;
 import google.architecture.girls.databinding.ActivityGirlsBinding;
 
 @Route(path = ARouterPath.GirlsListAty)

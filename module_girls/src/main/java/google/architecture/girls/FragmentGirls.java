@@ -18,7 +18,7 @@ import google.architecture.common.base.ARouterPath;
 import google.architecture.common.base.BaseFragment;
 import google.architecture.coremodel.datamodel.http.entities.GirlsData;
 import google.architecture.coremodel.viewmodel.GirlsViewModel;
-import google.architecture.coremodel.viewmodel.ViewModelProviders;
+import android.arch.lifecycle.ViewModelProviders;
 import google.architecture.girls.databinding.FragmentGirlsBinding;
 
 

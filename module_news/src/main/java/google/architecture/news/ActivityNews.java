@@ -13,7 +13,7 @@ import google.architecture.common.base.ARouterPath;
 import google.architecture.common.base.BaseActivity;
 import google.architecture.coremodel.datamodel.http.entities.NewsData;
 import google.architecture.coremodel.viewmodel.NewsViewModel;
-import google.architecture.coremodel.viewmodel.ViewModelProviders;
+import android.arch.lifecycle.ViewModelProviders;
 import google.architecture.news.databinding.ActivityNewsBinding;
 
 @Route(path = ARouterPath.NewsListAty)

@@ -1,6 +1,7 @@
 package google.architecture.girls;
 
 import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -19,7 +20,6 @@ import google.architecture.coremodel.datamodel.http.entities.GirlsData;
 import google.architecture.coremodel.viewmodel.BaseViewModel;
 import google.architecture.coremodel.viewmodel.DynamicGirlsViewModel;
 import google.architecture.coremodel.viewmodel.GirlsViewModel;
-import google.architecture.coremodel.viewmodel.ViewModelProviders;
 import google.architecture.girls.databinding.ActivityGirlsBinding;
 
 /**
