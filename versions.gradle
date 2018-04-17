@@ -138,11 +138,13 @@
 
 
     def addRepos(RepositoryHandler handler) {
-//    handler.google()
-    handler.jcenter()
+        handler.google()
+        handler.jcenter()
 //    handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
-    handler.maven { url 'https://oss.jfrog.org/libs-snapshot' }
-    handler.maven { url 'https://jitpack.io' }
+        handler.maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        handler.maven { url 'https://oss.jfrog.org/libs-snapshot' }
+        handler.maven { url 'https://jitpack.io' }
+        handler.mavenCentral()
 
     }
     ext.addRepos = this.&addRepos
