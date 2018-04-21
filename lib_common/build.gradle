@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven'
+
 android {
     compileSdkVersion build_versions.target_sdk
     buildToolsVersion build_versions.build_tools
@@ -37,4 +39,29 @@ dependencies {
 
     api project(':lib_coremodel')
     annotationProcessor deps.arouter.compiler
+}
+
+uploadArchives {
+    configuration = configurations.archives
+    repositories {
+        mavenDeployer {
+            snapshotRepository(url: MAVEN_REPO_SNAPSHOT_URL) {
+                authentication(userName: NEXUS_USERNAME, password: NEXUS_PASSWORD)
+            }
+            repository(url: MAVEN_REPO_RELEASE_URL) {
+                authentication(userName: NEXUS_USERNAME, password: NEXUS_PASSWORD)
+            }
+            pom.project {
+                version '1.0.0'
+                artifactId 'lib_common_release'
+                groupId GROUP_ID
+                packaging TYPE
+                description DESCRIPTION
+            }
+        }
+    }
+}
+
+artifacts {
+    archives file('lib_common.aar')
 }
