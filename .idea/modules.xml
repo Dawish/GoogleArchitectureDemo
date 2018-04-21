@@ -3,13 +3,21 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GoogleArchitectureDemo.iml" filepath="$PROJECT_DIR$/GoogleArchitectureDemo.iml" />
+      <module fileurl="file://F:\GitHubCode\GoogleArchitectureDemo\GoogleArchitectureDemo.iml" filepath="F:\GitHubCode\GoogleArchitectureDemo\GoogleArchitectureDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app_specific/app_specific.iml" filepath="$PROJECT_DIR$/app_specific/app_specific.iml" />
+      <module fileurl="file://F:\GitHubCode\GoogleArchitectureDemo\app_specific\app_specific.iml" filepath="F:\GitHubCode\GoogleArchitectureDemo\app_specific\app_specific.iml" />
       <module fileurl="file://$PROJECT_DIR$/app_universal/app_universal.iml" filepath="$PROJECT_DIR$/app_universal/app_universal.iml" />
+      <module fileurl="file://F:\GitHubCode\GoogleArchitectureDemo\app_universal\app_universal.iml" filepath="F:\GitHubCode\GoogleArchitectureDemo\app_universal\app_universal.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib_common/lib_common.iml" filepath="$PROJECT_DIR$/lib_common/lib_common.iml" />
+      <module fileurl="file://F:\GitHubCode\GoogleArchitectureDemo\lib_common\lib_common.iml" filepath="F:\GitHubCode\GoogleArchitectureDemo\lib_common\lib_common.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib_coremodel/lib_coremodel.iml" filepath="$PROJECT_DIR$/lib_coremodel/lib_coremodel.iml" />
+      <module fileurl="file://F:\GitHubCode\GoogleArchitectureDemo\lib_coremodel\lib_coremodel.iml" filepath="F:\GitHubCode\GoogleArchitectureDemo\lib_coremodel\lib_coremodel.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib_opensource/lib_opensource.iml" filepath="$PROJECT_DIR$/lib_opensource/lib_opensource.iml" />
+      <module fileurl="file://F:\GitHubCode\GoogleArchitectureDemo\lib_opensource\lib_opensource.iml" filepath="F:\GitHubCode\GoogleArchitectureDemo\lib_opensource\lib_opensource.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_girls/module_girls.iml" filepath="$PROJECT_DIR$/module_girls/module_girls.iml" />
+      <module fileurl="file://F:\GitHubCode\GoogleArchitectureDemo\module_girls\module_girls.iml" filepath="F:\GitHubCode\GoogleArchitectureDemo\module_girls\module_girls.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_news/module_news.iml" filepath="$PROJECT_DIR$/module_news/module_news.iml" />
+      <module fileurl="file://F:\GitHubCode\GoogleArchitectureDemo\module_news\module_news.iml" filepath="F:\GitHubCode\GoogleArchitectureDemo\module_news\module_news.iml" />
     </modules>
   </component>
 </project>
