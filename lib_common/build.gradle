@@ -46,10 +46,10 @@ uploadArchives {
     repositories {
         mavenDeployer {
             snapshotRepository(url: MAVEN_REPO_SNAPSHOT_URL) {
-                authentication(userName: NEXUS_USERNAME, password: NEXUS_PASSWORD)
+                authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
             }
             repository(url: MAVEN_REPO_RELEASE_URL) {
-                authentication(userName: NEXUS_USERNAME, password: NEXUS_PASSWORD)
+                authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
             }
             pom.project {
                 version '1.0.0'
@@ -64,4 +64,14 @@ uploadArchives {
 
 artifacts {
     archives file('lib_common.aar')
+}
+
+def isReleaseBuild() {
+    return VERSION_NAME.contains("SNAPSHOT") == false
+}
+def getRepositoryUsername() {
+    return hasProperty('NEXUS_USERNAME') ? NEXUS_USERNAME : ""
+}
+def getRepositoryPassword() {
+    return hasProperty('NEXUS_PASSWORD') ? NEXUS_PASSWORD : ""
 }
