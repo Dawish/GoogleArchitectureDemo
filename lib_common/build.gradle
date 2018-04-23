@@ -54,9 +54,9 @@ uploadArchives {
             pom.project {
                 version '1.0.0'
                 artifactId 'lib_common_release'
-                groupId GROUP_ID
-                packaging TYPE
-                description DESCRIPTION
+                groupId getGroupId()
+                packaging getType()
+                description getDescription()
             }
         }
     }
@@ -83,4 +83,14 @@ def getRepositoryUsername() {
 }
 def getRepositoryPassword() {
     return hasProperty('NEXUS_PASSWORD') ? NEXUS_PASSWORD : ""
+}
+
+def getGroupId() {
+    return hasProperty('GROUP_ID') ? GROUP_ID : ""
+}
+def getType() {
+    return hasProperty('TYPE') ? TYPE : ""
+}
+def getDescription() {
+    return hasProperty('DESCRIPTION') ? DESCRIPTION : ""
 }
