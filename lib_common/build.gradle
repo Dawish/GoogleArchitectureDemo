@@ -45,10 +45,10 @@ uploadArchives {
     configuration = configurations.archives
     repositories {
         mavenDeployer {
-            snapshotRepository(url: MAVEN_REPO_SNAPSHOT_URL) {
+            snapshotRepository(url: getsSnapshotUrl()) {
                 authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
             }
-            repository(url: MAVEN_REPO_RELEASE_URL) {
+            repository(url: getReleaseUrl()) {
                 authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
             }
             pom.project {
@@ -69,6 +69,15 @@ artifacts {
 def isReleaseBuild() {
     return VERSION_NAME.contains("SNAPSHOT") == false
 }
+
+def getsSnapshotUrl() {
+    return hasProperty('MAVEN_REPO_SNAPSHOT_URL') ? MAVEN_REPO_SNAPSHOT_URL : ""
+}
+
+def getReleaseUrl() {
+    return hasProperty('MAVEN_REPO_RELEASE_URL') ? MAVEN_REPO_RELEASE_URL : ""
+}
+
 def getRepositoryUsername() {
     return hasProperty('NEXUS_USERNAME') ? NEXUS_USERNAME : ""
 }
