@@ -41,7 +41,7 @@ dependencies {
     annotationProcessor deps.arouter.compiler
 }
 
-uploadArchives {
+    uploadArchives {
     configuration = configurations.archives
     repositories {
         mavenDeployer {
@@ -53,7 +53,7 @@ uploadArchives {
             }
             pom.project {
                 version '1.0.0'
-                artifactId 'lib_common_release'
+                artifactId 'lib-common'
                 groupId getGroupId()
                 packaging getType()
                 description getDescription()
