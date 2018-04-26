@@ -38,7 +38,7 @@ dependencies {
 
     // Support libraries
     api deps.support.app_compat
-//    implementation deps.support.v4
+    api deps.support.v4
     api deps.support.design
     api deps.support.cardview
     api deps.support.recyclerview
